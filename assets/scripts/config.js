@@ -8,7 +8,7 @@ const config = {
 
 module.exports = config
 
-'use strict'
+// 'use strict'
 // this was used in the training for authentication
 // const config = {
 //   apiOrigins: {

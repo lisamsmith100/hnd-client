@@ -1,48 +1,73 @@
 'use strict'
+// remove signIn and signOut
+const store = require('../store.js')
+// ??const entryEvents = require('../entries/events.js')
 
-const api = require('./api')
-const ui = require('./ui')
-const getFormFields = require('../../../lib/get-form-fields.js')
-
-const onSignUp = function (event) {
-  event.preventDefault()
-  const data = getFormFields(event.target)
-  api.signUp(data)
-  .done(ui.success)
-  .fail(ui.fail)
+const signUpSuccess = (data) => {
+  store.user = data.user
+  console.log('store is' + store)
+  console.log('signup success')
+  $('.user-status').html('You signed up. Please sign-in.')
+  // $('.navbar-brand').html('<p>You have successfully signed up! To play, sign in.</p>')
+  // $('#sign-up-modal').find('input:text, input:password, select, textarea').val('')
 }
 
-const onSignIn = function (event) {
-  event.preventDefault()
-  const data = getFormFields(event.target)
-  api.signIn(data)
-  .done(ui.signInSuccess)
-  .fail(ui.fail)
+const signUpFailure = (error) => {
+  console.log('signupfailure')
+  console.log(error)
+  $('.user-status').html('Your sign-up failed.  Try a new email or password combo.')
 }
 
-const onSignOut = function (event) {
-  event.preventDefault()
-  const data = getFormFields(event.target)
-  api.signOut(data)
-  .done(ui.signOutSuccess)
-  .fail(ui.fail)
+const signInSuccess = (data) => {
+  store.user = data.user
+  console.log('signin success')
+  console.log('store is' + store)
+  $('.first-display').addClass('hiding')
+  $('.logged-in-buttons').removeClass('hiding')
+  $('.user-status').html('You signed in successfully.')
+  // $('#sign-up-modal').find('input:text, input:password, select, textarea').val('')
 }
 
-const onChangePassword = function (event) {
-  event.preventDefault()
-  const data = getFormFields(event.target)
-  api.changePassword(data)
-  .done(ui.changePasswordSuccess)
-  .fail(ui.fail)
+const signInFailure = (error) => {
+  console.log('sign in failed')
+  $('.user-status').html('Hm. Your sign-in failed.  Try again.')
 }
 
-const addHandlers = () => {
-  $('#sign-up').on('submit', onSignUp)
-  $('#sign-in').on('submit', onSignIn)
-  $('#sign-out').on('submit', onSignOut)
-  $('#change-password').on('submit', onChangePassword)
+const signOutSuccess = () => {
+  store.user = null
+  console.log(store)
+  $('.first-display').removeClass('hiding')
+  $('.logged-in-buttons').addClass('hiding')
+  $('.user-status').html('Hm. You signed out.')
+}
+
+const signOutFailure = (error) => {
+  console.log(store)
+  console.log('sign out failed')
+  $('.user-status').html('Your sign out failed.')
+}
+
+const changePasswordSuccess = () => {
+  console.log('Password Successfully Changed.')
+  $('.user-status').html('You changed your password.')
+}
+
+const success = (data) => {
+  console.log(data)
+}
+
+const failure = (error) => {
+  console.error(error)
 }
 
 module.exports = {
-  addHandlers
+  signUpSuccess,
+  signUpFailure,
+  signInSuccess,
+  signInFailure,
+  signOutSuccess,
+  signOutFailure,
+  changePasswordSuccess,
+  success,
+  failure
 }

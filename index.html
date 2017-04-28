@@ -19,7 +19,10 @@
     <p>This is a list of whatever -- your hopes, your dreams, everything inbetween.</p>
     <div class="user-info">
       <h1>User Information Section</h1>
-      <form id="sign-up">
+      <div class="user-status">
+       User status belongs here.
+      </div>
+      <form id="sign-up" class="first-display">
         <fieldset>
           <legend>Sign up!</legend>
           <input type="text" name="credentials[email]" value="" placeholder="email">
@@ -28,7 +31,7 @@
           <input type="submit" name="submit" value="Sign up">
         </fieldset>
       </form>
-      <form id="sign-in">
+      <form id="sign-in" class="first-display">
         <fieldset>
           <legend>Sign in!</legend>
           <input type="text" name="credentials[email]" value="" placeholder="email">
@@ -36,13 +39,13 @@
           <input type="submit" name="submit" value="Sign in">
         </fieldset>
       </form>
-      <form id="sign-out">
+      <form id="sign-out" class="logged-in-display">
         <fieldset>
           <legend>Sign out!</legend>
           <input type="submit" name="submit" value="Sign out">
         </fieldset>
       </form>
-      <form id="change-password">
+      <form id="change-password" class="logged-in-display">
         <fieldset>
           <legend>Change Password</legend>
           <input type="password" name="passwords[old]" value="" placeholder="Old Password">
@@ -53,6 +56,7 @@
     </div>
 
     <div class="list-div">
+      <img src="./images/jonesislandsunset.jpg">
       <h1>Hopes and Dreams Section</h1>
       <button id="showAllHnD" class="btn btn-default">Show All Your List of Hopes and Dreams</button><br>
       <button id="addNewHnD" class="btn btn-default">Add a New Hope and Dream</button><br>

@@ -3,23 +3,26 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
 @import 'color';
 // @import 'typography';
-@import 'theme';
+// @import 'theme';
 
 // .list-div {
-//   background-image: url('../images/hopesanddreams.jpg');
+//   background-image: url('./images/jonesislandsunset.jpg');
 // }
 
-body {
-  // background-image: url(http://i.imgur.com/G3u2Z4v.jpg);
-  // : #dfcbbd;
-}
+// body {
+//   background-image: url('images/jonesislandsunset.jpg');
+//   background-size: cover;
+//   // : #dfcbbd;
+// }
 
 h1 {
   margin-left: 10px;
 }
+
 .user-info {
-  background-image: url(../images/hopesanddreams.jpg);
+  background-image: url(./images/hopesanddreams.jpg);
 }
+
 li {
   margin-left: 50px;
 }
@@ -30,4 +33,8 @@ li {
 
 #showAllHnD,#addNewHnD, #showOneHnD, #updateOneHnD, #clearHnD, #removeOneHnD {
   float: left;
+}
+
+.hiding {
+  display: none;
 }
