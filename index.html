@@ -1,22 +1,80 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>Hopes and Dreams</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `link` tags unless you know what you are doing -->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<head>
+  <title>Hopes and Dreams</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `script` tags unless you know what you are doing -->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
-    <body class="container-fluid">
-      <h1>Hope and Dreams</h1>
-      <p>This is a list of whatever -- your hopes, your dreams, everything inbetween.</p>
-      <button id="addNewHnD" class="btn btn-default">Add new Hopes and Dreams</button>
-      <button id="clearHnD" class="btn btn-default">Clear new Hopes and Dreams!</button>
-      <div>User Information</div>
-      <div>List</div>
-    </body>
+  <!-- Do not add `link` tags unless you know what you are doing -->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Do not add `script` tags unless you know what you are doing -->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body class="container-fluid">
+  <div class="background">
+    <h1>Hopes and Dreams</h1>
+    <p>This is a list of whatever -- your hopes, your dreams, everything inbetween.</p>
+    <div class="user-info">
+      <h1>User Information Section</h1>
+      <form id="sign-up">
+        <fieldset>
+          <legend>Sign up!</legend>
+          <input type="text" name="credentials[email]" value="" placeholder="email">
+          <input type="password" name="credentials[password]" value="" placeholder="password">
+          <input type="password" name="credentials[password_confirmation]" value="" placeholder="password confirmation">
+          <input type="submit" name="submit" value="Sign up">
+        </fieldset>
+      </form>
+      <form id="sign-in">
+        <fieldset>
+          <legend>Sign in!</legend>
+          <input type="text" name="credentials[email]" value="" placeholder="email">
+          <input type="password" name="credentials[password]" value="" placeholder="password">
+          <input type="submit" name="submit" value="Sign in">
+        </fieldset>
+      </form>
+      <form id="sign-out">
+        <fieldset>
+          <legend>Sign out!</legend>
+          <input type="submit" name="submit" value="Sign out">
+        </fieldset>
+      </form>
+      <form id="change-password">
+        <fieldset>
+          <legend>Change Password</legend>
+          <input type="password" name="passwords[old]" value="" placeholder="Old Password">
+          <input type="password" name="passwords[new]" value="" placeholder="New Password">
+          <input type="submit" name="submit" value="Change Password">
+        </fieldset>
+      </form>
+    </div>
+
+    <div class="list-div">
+      <h1>Hopes and Dreams Section</h1>
+      <button id="showAllHnD" class="btn btn-default">Show All Your List of Hopes and Dreams</button><br>
+      <button id="addNewHnD" class="btn btn-default">Add a New Hope and Dream</button><br>
+      <button id="showOneHnD" class="btn btn-default">Show A Particular Hope and Dream</button><br>
+      <button id="updateOneHnD" class="btn btn-default">Update A Particular Hope and Dream</button><br>
+      <button id="clearHnD" class="btn btn-default">Hide One of Your Hopes and Dreams</button><br>
+      <button id="removeOneHnD" class="btn btn-default">Delete A Particular Hope and Dream Forever</button><br>
+      <div class="half">
+        <div class="half">
+          <p>I'm a box!</p>
+        </div>
+        <div class="half">
+          <p>I'm a box!</p>
+        </div>
+        <div class="full">
+          <p>I'm also a box!</p>
+          <p>Just a little different from those others.</p>
+        </div>
+      </div>
+      <p>I'm a box!</p>
+    </div>
+  </div>
+</body>
+
 </html>

@@ -1,12 +1,17 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
-// @import 'color';
+@import 'color';
 // @import 'typography';
-// @import 'theme';
+@import 'theme';
+
+.list-div {
+  background-image: url('http://i.imgur.com/G3u2Z4v.jpg');
+}
 
 body {
-  background-color: #dfcbbd;
+  // background-image: url(http://i.imgur.com/G3u2Z4v.jpg);
+  // : #dfcbbd;
 }
 
 h1 {
@@ -15,4 +20,12 @@ h1 {
 
 li {
   margin-left: 50px;
+}
+
+.btn {
+  float:none;
+}
+
+#showAllHnD,#addNewHnD, #showOneHnD, #updateOneHnD, #clearHnD, #removeOneHnD {
+  float: left;
 }
