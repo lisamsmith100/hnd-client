@@ -1,0 +1,29 @@
+{{#each books as |book|}}
+
+  <!-- {{> partial}} -->
+  <!-- Don't uncomment yet -->
+
+<!-- goal: each book's information is displayed within an ul with a data-id attribute. -->
+
+ <!-- Developers, why are we using data-id and not just id? -->
+  <ul><h1><data-id="{{book.id}} remove-{{book.id}}"> <small>Title: {{book.title}}</small></h1></ul>
+  <!-- <div> -->
+    {{#if book.description}}
+      <li>{{book.description}}</li>
+    {{else}}
+      <li>No description.</li>
+    {{/if}}
+    {{#if book.author}}
+      <li>by {{book.author}}</li>
+    {{else}}
+      <li>No author available.</li>
+    {{/if}}
+    {{#if book.cover_img}}
+      <li><img src="{{book.cover_img}}"</li>
+    {{else}}
+      <li>No image.</li>
+    {{/if}}
+    <li><button id="removeBooksButton" class="btn btn-default remove-button" data-id="{{book.id}}" id="remove-{{book.id}}">Remove book!</button></li>
+  <!-- </div> -->
+
+{{/each}}

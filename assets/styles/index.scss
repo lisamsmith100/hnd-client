@@ -1,2 +1,18 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
+// @import 'color';
+// @import 'typography';
+// @import 'theme';
+
+body {
+  background-color: #dfcbbd;
+}
+
+h1 {
+  margin-left: 10px;
+}
+
+li {
+  margin-left: 50px;
+}
