@@ -5,9 +5,9 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 // @import 'typography';
 @import 'theme';
 
-.list-div {
-  background-image: url('http://i.imgur.com/G3u2Z4v.jpg');
-}
+// .list-div {
+//   background-image: url('../images/hopesanddreams.jpg');
+// }
 
 body {
   // background-image: url(http://i.imgur.com/G3u2Z4v.jpg);
@@ -17,7 +17,9 @@ body {
 h1 {
   margin-left: 10px;
 }
-
+.user-info {
+  background-image: url(../images/hopesanddreams.jpg);
+}
 li {
   margin-left: 50px;
 }
