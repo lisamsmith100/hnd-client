@@ -9,16 +9,29 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 //   background-image: url('./images/jonesislandsunset.jpg');
 // }
 
-body {
+.container-fluid {
   background: url('./images/hopesandreams.jpg') center;
-  background-size: cover;
-  // : #dfcbbd;
+  background-repeat:no-repeat;
+  background-size:contain;
+  background-position:center;
 }
+//
+// body {
+//   background: url('./images/hopesandreams.jpg') center;
+//   background-repeat:no-repeat;
+//   background-size:contain;
+//   background-position:center;
+//   // : #dfcbbd;
+// }
 
 h1 {
   margin-left: 10px;
+  color: #eae236;
 }
 
+// .first-display, .logged-in-button {
+//   background-color: #ab2dc3;
+// }
 // .user-info {
 //   background: url('./images/jonesislandsunset.jpg') center;
 // }
@@ -28,7 +41,7 @@ li {
 }
 
 .btn {
-  float:none;
+  float:left;
 }
 
 #showAllHnD,#addNewHnD, #showOneHnD, #updateOneHnD, #clearHnD, #removeOneHnD {
