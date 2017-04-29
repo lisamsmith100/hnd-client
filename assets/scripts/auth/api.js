@@ -9,7 +9,7 @@ const store = require('../store')
 const signUp = function (data) {
   console.log(data)
   return $.ajax({
-    url: config.apiOrigin + 'sign-up/',
+    url: config.apiOrigin + '/sign-up/',
     method: 'POST',
     data
   })
