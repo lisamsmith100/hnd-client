@@ -2,7 +2,7 @@
 
 const config = {
   apiOrigins: {
-    production: 'https://hnd-api.herokuapp.com/'
+    production: 'https://hnd-api.herokuapp.com'
   },
 }
 
