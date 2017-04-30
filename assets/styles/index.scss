@@ -49,15 +49,15 @@ legend {
 }
 
 form {
-  // float:none;
+  float:none;
   // display: inline-block;
   border:none;
   padding: .938em 1.875em;
   // border: .094em solid #829c5d;
   // border-radius: .625em;
   // background-color: #d3e37f;
-  box-shadow: 0 .375em .313em -0.313em #6ac531, inset 0 .063em #4da117, inset 0 -0.188em #b1ce7d;
-  color: #3f60ba;
+  // box-shadow: 0 .375em .313em -0.313em #6ac531, inset 0 .063em #4da117, inset 0 -0.188em #b1ce7d;
+  // color: #3f60ba;
   text-decoration: none;
   text-transform: uppercase;
   text-shadow: 0 .063em #154969;
@@ -128,6 +128,10 @@ input[type=submit] {
   text-shadow: 0 .063em #154969;
   cursor:pointer;
   font: bold 1.8rem;
+}
+
+fieldset {
+  border:none;
 }
 
 .btn {
@@ -209,8 +213,16 @@ input[type=submit] {
   font: bold 1.8rem;
 }
 
+.list-button-div {
+  float: none;
+}
+
 #showAllHnD,#addNewHnD, #showOneHnD, #updateOneHnD, #clearHnD, #removeOneHnD {
   float:none;
+}
+
+#showAllHnD {
+  margin-left: 25px;
 }
 
 .hiding {
