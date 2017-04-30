@@ -17,7 +17,7 @@ body {
   padding: 0px;
   border:none;
   background-repeat:no-repeat;
-  background-size:contain;
+  background-size:cover;
   background-position:center;
   outline:none;
 }
@@ -36,6 +36,98 @@ h1 {
 
 li {
   margin-left: 50px;
+}
+
+
+p {
+  color: #d3e37f;
+}
+
+legend {
+  color: #d3e37f;
+  border:none;
+}
+
+form {
+  // float:none;
+  // display: inline-block;
+  border:none;
+  padding: .938em 1.875em;
+  // border: .094em solid #829c5d;
+  // border-radius: .625em;
+  // background-color: #d3e37f;
+  box-shadow: 0 .375em .313em -0.313em #6ac531, inset 0 .063em #4da117, inset 0 -0.188em #b1ce7d;
+  color: #3f60ba;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-shadow: 0 .063em #154969;
+  cursor:pointer;
+  font: bold 1.8rem;
+}
+input[type=text] {
+    // padding: 0;
+    // height: 30px;
+    // position: relative;
+    // left: 0;
+    // outline: none;
+    // border: 1px solid #cdcdcd;
+    // border-color: rgba(0,0,0,.15);
+    // background-color: white;
+    // font-size: 16px;
+    float:none;
+    display: inline-block;
+    padding: .938em 1.875em;
+    border: .094em solid #829c5d;
+    border-radius: .625em;
+    background-color: #d1d6bc;
+    box-shadow: 0 .375em .313em -0.313em #6ac531, inset 0 .063em #4da117, inset 0 -0.188em #b1ce7d;
+    color: #3f60ba;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-shadow: 0 .063em #154969;
+    cursor:pointer;
+    font: bold 1.8rem;
+}
+
+input[type=password] {
+    // padding: 0;
+    // height: 30px;
+    // position: relative;
+    // left: 0;
+    // outline: none;
+    // border: 1px solid #cdcdcd;
+    // border-color: rgba(0,0,0,.15);
+    // background-color: white;
+    // font-size: 16px;
+    float:none;
+    display: inline-block;
+    padding: .938em 1.875em;
+    border: .094em solid #829c5d;
+    border-radius: .625em;
+    background-color: #d1d6bc;
+    box-shadow: 0 .375em .313em -0.313em #6ac531, inset 0 .063em #4da117, inset 0 -0.188em #b1ce7d;
+    color: #3f60ba;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-shadow: 0 .063em #154969;
+    cursor:pointer;
+    font: bold 1.8rem;
+}
+
+input[type=submit] {
+  float:left;
+  display: inline-block;
+  padding: .938em 1.875em;
+  border: .094em solid #829c5d;
+  border-radius: .625em;
+  background-color: #d3e37f;
+  box-shadow: 0 .375em .313em -0.313em #6ac531, inset 0 .063em #4da117, inset 0 -0.188em #b1ce7d;
+  color: #3f60ba;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-shadow: 0 .063em #154969;
+  cursor:pointer;
+  font: bold 1.8rem;
 }
 
 .btn {
@@ -62,7 +154,7 @@ li {
 }
 
 .auth-btn {
-  float:left;
+  float:none;
   display: inline-block;
   padding: .938em 1.875em;
   border: .094em solid #829c5d;
@@ -86,7 +178,7 @@ li {
 }
 
 .auth-input {
-  float:none;
+  float:left;
   display: inline-block;
   padding: .938em 1.875em;
   border: .094em solid #829c5d;
@@ -100,16 +192,25 @@ li {
   cursor:pointer;
   font: bold 1.8rem;
 }
+
+.entry-id-input .entry-title-input .entry-backstory-input .entry-stopper-input .entry-status-input .entry-deleted_flag-input {
+  float:left;
+  display: inline-block;
+  padding: .938em 1.875em;
+  border: .094em solid #829c5d;
+  border-radius: .625em;
+  background-color: #d3e37f;
+  box-shadow: 0 .375em .313em -0.313em #6ac531, inset 0 .063em #4da117, inset 0 -0.188em #b1ce7d;
+  color: #3f60ba;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-shadow: 0 .063em #154969;
+  cursor:pointer;
+  font: bold 1.8rem;
+}
+
 #showAllHnD,#addNewHnD, #showOneHnD, #updateOneHnD, #clearHnD, #removeOneHnD {
   float:none;
-}
-
-p {
-  color: #d3e37f;
-}
-
-legend {
-  color: #d3e37f;
 }
 
 .hiding {
