@@ -1,55 +1,78 @@
 'use strict'
 // remove signIn and signOut
 const store = require('../store.js')
-// ??const entryEvents = require('../entries/events.js')
+// const entryEvents = require('./events.js')
 
-const signUpSuccess = (data) => {
-  store.user = data.user
+const showEntriesSuccess = (data) => {
+  store.entries = data.entries
+  const userEntries = store.entries
+  const userEntryArray = JSON.stringify(store.entries)
+  console.log('store.entries is ' + userEntries)
+  $('#content').html('userEntryArray is ' + userEntryArray)
   console.log('store is' + store)
-  console.log('signup success')
-  $('.user-status').html('You signed up. Please sign-in.')
-  // $('.navbar-brand').html('<p>You have successfully signed up! To play, sign in.</p>')
-  // $('#sign-up-modal').find('input:text, input:password, select, textarea').val('')
+  console.log('showEntries is a success')
 }
 
-const signUpFailure = (error) => {
-  console.log('signupfailure')
-  console.log(error)
-  $('.user-status').html('Your sign-up failed.  Try a new email or password combo.')
+const showEntriesFailure = (error) => {
+  console.log('showEntries failed')
 }
 
-const signInSuccess = (data) => {
-  store.user = data.user
-  console.log('signin success')
+const addEntrySuccess = (data) => {
+  store.entry = data.entry
+  console.log('store.entry is ' + store.entry)
+  // $('#content').html('userEntryArray is ' + userEntryArray)
+  console.log('addEntry is a success')
+}
+
+const addEntryFailure = (error) => {
+  console.log('addEntry failed')
+}
+
+const showOneEntrySuccess = (data) => {
+  store.entry = data.entry
+  const userEntry = store.entry
+  const userEntryArray = JSON.stringify(store.entry)
+  console.log('store.entry is ' + userEntry)
+  $('#content').html('userEntryArray is ' + userEntryArray)
   console.log('store is' + store)
-  $('.first-display').addClass('hiding')
-  $('.logged-in-buttons').removeClass('hiding')
-  $('.user-status').html('You signed in successfully.')
-  // $('#sign-up-modal').find('input:text, input:password, select, textarea').val('')
+  console.log('showOneEntry is a success')
 }
 
-const signInFailure = (error) => {
-  console.log('sign in failed')
-  $('.user-status').html('Hm. Your sign-in failed.  Try again.')
+const showOneEntryFailure = (error) => {
+  console.log('showOneEntry failed')
 }
 
-const signOutSuccess = () => {
-  store.user = null
-  console.log(store)
-  $('.first-display').removeClass('hiding')
-  $('.logged-in-buttons').addClass('hiding')
-  $('.user-status').html('Hm. You signed out.')
+const updateEntrySuccess = (data) => {
+  store.entry = data.entry
+  console.log('store.entry is ' + store.entry)
+  // $('#content').html('userEntryArray is ' + userEntryArray)
+  console.log('updateEntry is a success')
 }
 
-const signOutFailure = (error) => {
-  console.log(store)
-  console.log('sign out failed')
-  $('.user-status').html('Your sign out failed.')
+const updateEntryFailure = (error) => {
+  console.log('updateEntry failed')
 }
 
-const changePasswordSuccess = () => {
-  console.log('Password Successfully Changed.')
-  $('.user-status').html('You changed your password.')
+const hideEntrySuccess = (data) => {
+  store.entry = data.entry
+  console.log('store.entry is ' + store.entry)
+  // $('#content').html('userEntryArray is ' + userEntryArray)
+  console.log('hideEntry is a success')
+}
+
+const hideEntryFailure = (error) => {
+  console.log('hideEntry failed')
+}
+
+const deleteEntrySuccess = (data) => {
+  store.entry = null
+  console.log('store.entry is ' + store.entry)
+  // $('#content').html('userEntryArray is ' + userEntryArray)
+  console.log('deleteEntry is a success')
+}
+
+const deleteEntryFailure = (error) => {
+  console.log('deleteEntry failed')
 }
 
 const success = (data) => {
@@ -61,13 +84,16 @@ const failure = (error) => {
 }
 
 module.exports = {
-  signUpSuccess,
-  signUpFailure,
-  signInSuccess,
-  signInFailure,
-  signOutSuccess,
-  signOutFailure,
-  changePasswordSuccess,
+  showEntriesSuccess,
+  showEntriesFailure,
+  addEntrySuccess,
+  addEntryFailure,
+  showOneEntrySuccess,
+  showOneEntryFailure,
+  updateEntrySuccess,
+  updateEntryFailure,
+  hideEntrySuccess,
+  hideEntryFailure,
   success,
   failure
 }

@@ -7,46 +7,87 @@ const store = require('../store')
 
 // authApi.signUp(authUi.success, authUi.failure, data);
 
-const getEntries = function () {
-  console.log('called getEntries in the entry/api.js')
+const showEntries = function (data) {
+  console.log('called showEntries in the entry/api.js')
   return $.ajax({
-    url: config.apiOrigin + '/entries',
+    url: config.apiOrigin + '/entries/',
     method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
     data
   })
 }
 
-// const signIn = function (data) {
-//   console.log(data)
-//   return $.ajax({
-//     url: config.apiOrigin + '/sign-in/',
-//     method: 'POST',
-//     data
-//   })
-// }
-//
-// const signOut = function () {
-//   return $.ajax({
-//     method: 'DELETE',
-//     url: config.apiOrigin + '/sign-out/' + store.user.id,
-//     headers: {
-//       Authorization: 'Token token=' + store.user.token
-//     }
-//   })
-// }
-//
-// const changePassword = function (data) {
-//   return $.ajax({
-//     method: 'PATCH',
-//     url: config.apiOrigin + '/change-password/' + store.user.id,
-//     headers: {
-//       Authorization: 'Token token=' + store.user.token
-//     },
-//     data: data
-//   })
-// }
+const addEntry = function (data) {
+  console.log('called addEntry in the entry/api.js')
+  console.log('data is' + data)
+  return $.ajax({
+    url: config.apiOrigin + '/entries/',
+    method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+
+const showOneEntry = function (data) {
+  console.log('called showOneEntry in the entry/api.js')
+  console.log('data is' + data)
+  return $.ajax({
+    url: config.apiOrigin + '/entries/',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+
+const updateEntry = function (data) {
+  console.log('called addEntry in the entry/api.js')
+  console.log('data is' + data)
+  return $.ajax({
+    url: config.apiOrigin + '/entries/',
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+
+const hideEntry = function (data) {
+  console.log('called hideEntry in the entry/api.js')
+  console.log('data is' + data)
+  return $.ajax({
+    url: config.apiOrigin + '/entries/',
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+
+const deleteEntry = function (data) {
+  console.log('called deleteEntry in the entry/api.js')
+  console.log('data is' + data)
+  return $.ajax({
+    url: config.apiOrigin + '/entries/',
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
 
 module.exports = {
-  getEntries,
-
+  showEntries,
+  addEntry,
+  showOneEntry,
+  updateEntry,
+  hideEntry,
+  deleteEntry
 }
