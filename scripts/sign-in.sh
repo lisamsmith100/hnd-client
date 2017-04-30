@@ -1,4 +1,3 @@
-# curl --include --request GET https://hnd-api.herokuapp.com/1
 #!/bin/bash
 #EMAIL=firstuser@example.email PASSWORD=passy sh scripts/sign-in.sh
 #EMAIL=seconduser@example.email PASSWORD=passy sh scripts/sign-in.sh
