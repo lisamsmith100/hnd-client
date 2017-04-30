@@ -1,7 +1,7 @@
 'use strict'
 // remove signIn and signOut
 const store = require('../store.js')
-const app = require('../app.js')
+// const app = require('../app.js')
 // const entryEvents = require('../entries/events.js')
 
 const signUpSuccess = (data) => {
@@ -10,13 +10,14 @@ const signUpSuccess = (data) => {
   console.log('signup is a success')
   $('.user-status').html('You signed up. Please sign-in.')
   // $('.navbar-brand').html('<p>You have successfully signed up! To play, sign in.</p>')
-  // $('#sign-up-modal').find('input:text, input:password, select, textarea').val('')
+  $('.sign-up').find('input:text, input:password, select, textarea').val('')
 }
 
 const signUpFailure = (error) => {
   console.log('signup was a failure')
   console.log(error)
   $('.user-status').html('Your sign-up failed.  Try a new email or password combo.')
+  $('.sign-up').find('input:text, input:password, select, textarea').val('')
 }
 
 const signInSuccess = (data) => {
@@ -27,13 +28,14 @@ const signInSuccess = (data) => {
   $('.first-display').addClass('hiding')
   $('.logged-in-display').removeClass('hiding')
   $('.user-status').html('You signed in successfully.')
-  // $('#sign-up-modal').find('input:text, input:password, select, textarea').val('')
+  $('.sign-in').find('input:text, input:password, select, textarea').val('')
 }
 
 const signInFailure = (error) => {
   console.log('sign in failed')
   console.error(error)
   $('.user-status').html('Hm. Your sign-in failed.  Try again.')
+  $('.sign-in').find('input:text, input:password, select, textarea').val('')
 }
 
 const signOutSuccess = () => {
@@ -41,7 +43,7 @@ const signOutSuccess = () => {
   console.log('sign out was a success')
   $('.first-display').removeClass('hiding')
   $('.logged-in-display').addClass('hiding')
-  $('.user-status').html('Hm. You signed out.')
+  $('.user-status').html('You signed out.')
 }
 
 const signOutFailure = (error) => {
@@ -53,9 +55,9 @@ const signOutFailure = (error) => {
 
 const changePasswordSuccess = () => {
   console.log('Password Successfully Changed.')
-  console.error(error)
   $('.logged-in-display').removeClass('hiding')
   $('.user-status').html('You changed your password.')
+  $('.change-password').find('input:text, input:password, select, textarea').val('')
 }
 
 const changePasswordFailure = (error) => {
@@ -81,6 +83,7 @@ module.exports = {
   signOutSuccess,
   signOutFailure,
   changePasswordSuccess,
+  changePasswordFailure,
   success,
   failure
 }
