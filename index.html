@@ -31,6 +31,7 @@
       <div class="user-status">
        <p>User status belongs here.</p>
       </div>
+
       <form class="sign-up first-display">
         <fieldset>
           <legend>Sign up!</legend>
@@ -40,6 +41,7 @@
           <input class="auth-btn" type="submit" name="submit" value="Sign up">
         </fieldset>
       </form>
+
       <form class="sign-in first-display">
         <fieldset>
           <legend>Sign in!</legend>
@@ -48,12 +50,14 @@
           <input class="auth-btn" type="submit" name="submit" value="Sign in">
         </fieldset>
       </form>
+
       <form class="sign-out logged-in-display hiding">
         <fieldset>
           <legend>Sign out!</legend>
           <input class="auth-btn" type="submit" name="submit" value="Sign out">
         </fieldset>
       </form>
+
       <form class="change-password logged-in-display hiding">
         <fieldset>
           <legend>Change Password</legend>
@@ -69,10 +73,41 @@
       <h1>Hopes and Dreams</h1>
       <button id="showAllHnD" class="btn btn-default">Show All Your List of Hopes and Dreams</button><br>
       <button id="addNewHnD" class="btn btn-default">Add a New Hope and Dream</button><br>
-      <button id="showOneHnD" class="btn btn-default">Show A Particular Hope and Dream</button><br>
-      <button id="updateOneHnD" class="btn btn-default">Update A Particular Hope and Dream</button><br>
-      <button id="hideOneHnD" class="btn btn-default">Hide One of Your Hopes and Dreams</button><br>
+
+      <form id="showOneHnD">
+        <fieldset>
+          <legend>Show One of Your Hopes and Dreams</legend>
+          <input class="entry-id-input" type="text" name="entries[id]" value="" placeholder="entry id">
+          <input class="entry-id-btn" type="submit" name="submit" value="Get Entry">
+        </fieldset>
+      </form>
+
+      <form id="updateOneHnD">
+        <fieldset>
+          <legend>Update A Particular Hope and Dream</legend>
+          <input class="entry-id-input" type="text" name="entries[id]" value="" placeholder="entry id">
+          <input class="entry-id-btn" type="submit" name="submit" value="Get Entry">
+        </fieldset>
+      </form>
+
+      <form id="hideOneHnD">
+        <fieldset>
+          <legend>Hide One of Your Hopes and Dreams</legend>
+          <input class="entry-id-input" type="text" name="entries[id]" value="" placeholder="entry id">
+          <input class="entry-id-btn" type="submit" name="submit" value="Hide Entry">
+        </fieldset>
+      </form>
+
       <button id="deleteOneHnD" class="btn btn-default">Delete A Particular Hope and Dream Forever</button><br>
+
+      <form id="deleteOneHnD">
+        <fieldset>
+          <legend>Delete A Particular Hope and Dream Forever</legend>
+          <input class="entry-id-input" type="text" name="entries[id]" value="" placeholder="entry id">
+          <input class="entry-id-btn" type="submit" name="submit" value="Delete Entry Forever">
+        </fieldset>
+      </form>
+
       <div id="content" class="content">
       </div>
     </div>
