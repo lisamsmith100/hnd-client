@@ -7,9 +7,9 @@ const showEntriesSuccess = (data) => {
   store.entries = data.entries
   const userEntries = store.entries
   const userEntryArray = JSON.stringify(store.entries)
-  console.log('store.entries is ' + userEntries)
-  $('#content').html('userEntryArray is ' + userEntryArray)
-  console.log('store is' + store)
+  console.log('store.entries is ', userEntries)
+  $('#content').html('userEntryArray is ', userEntryArray)
+  console.log('store is', store)
   console.log('showEntries is a success')
 }
 
@@ -19,7 +19,7 @@ const showEntriesFailure = (error) => {
 
 const addEntrySuccess = (data) => {
   store.entry = data.entry
-  console.log('store.entry is ' + store.entry)
+  console.log('store.entry is ', store.entry)
   // $('#content').html('userEntryArray is ' + userEntryArray)
   console.log('addEntry is a success')
 }
@@ -32,9 +32,9 @@ const showOneEntrySuccess = (data) => {
   store.entry = data.entry
   const userEntry = store.entry
   const userEntryArray = JSON.stringify(store.entry)
-  console.log('store.entry is ' + userEntry)
-  $('#content').html('userEntryArray is ' + userEntryArray)
-  console.log('store is' + store)
+  console.log('store.entry is ', userEntry)
+  $('#content').html('userEntryArray is ', userEntryArray)
+  console.log('store is', store)
   console.log('showOneEntry is a success')
 }
 
@@ -44,7 +44,7 @@ const showOneEntryFailure = (error) => {
 
 const updateEntrySuccess = (data) => {
   store.entry = data.entry
-  console.log('store.entry is ' + store.entry)
+  console.log('store.entry is ', store.entry)
   // $('#content').html('userEntryArray is ' + userEntryArray)
   console.log('updateEntry is a success')
 }
@@ -55,7 +55,7 @@ const updateEntryFailure = (error) => {
 
 const hideEntrySuccess = (data) => {
   store.entry = data.entry
-  console.log('store.entry is ' + store.entry)
+  console.log('store.entry is ', store.entry)
   // $('#content').html('userEntryArray is ' + userEntryArray)
   console.log('hideEntry is a success')
 }
@@ -66,7 +66,7 @@ const hideEntryFailure = (error) => {
 
 const deleteEntrySuccess = (data) => {
   store.entry = null
-  console.log('store.entry is ' + store.entry)
+  console.log('store.entry is ', store.entry)
   // $('#content').html('userEntryArray is ' + userEntryArray)
   console.log('deleteEntry is a success')
 }
