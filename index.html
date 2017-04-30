@@ -11,9 +11,18 @@
   <!-- Do not add `script` tags unless you know what you are doing -->
   <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
   <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+  <!-- Load Facebook SDK for JavaScript -->
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
 </head>
 
 <body class="container-fluid">
+  <div id="fb-root"></div>
   <div class="background">
     <h1>Hopes and Dreams</h1>
     <p>This is a list of whatever -- your hopes, your dreams, everything inbetween.</p>
@@ -68,6 +77,13 @@
       </div>
     </div>
   </div>
+  <div class="fb-like"
+    data-href="https://lisamsmith100.github.io/hnd-client/"
+    data-layout="button_count"
+    data-action="like"
+    data-size="small"
+    data-show-faces="true"
+    data-share="true"></div>
 </body>
 
 </html>

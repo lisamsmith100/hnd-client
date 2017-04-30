@@ -11,8 +11,7 @@ const getEntries = function () {
   console.log('called getEntries in the entry/api.js')
   return $.ajax({
     url: config.apiOrigin + '/entries',
-    method: 'GET',
-    data
+    method: 'GET'
   })
 }
 
