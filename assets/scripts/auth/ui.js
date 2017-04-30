@@ -1,26 +1,27 @@
 'use strict'
 // remove signIn and signOut
 const store = require('../store.js')
+const app = require('../app.js')
 // ??const entryEvents = require('../entries/events.js')
 
 const signUpSuccess = (data) => {
   store.user = data.user
   console.log('store is' + store)
-  console.log('signup success')
+  console.log('signup is a success')
   $('.user-status').html('You signed up. Please sign-in.')
   // $('.navbar-brand').html('<p>You have successfully signed up! To play, sign in.</p>')
   // $('#sign-up-modal').find('input:text, input:password, select, textarea').val('')
 }
 
 const signUpFailure = (error) => {
-  console.log('signupfailure')
+  console.log('signup was a failure')
   console.log(error)
   $('.user-status').html('Your sign-up failed.  Try a new email or password combo.')
 }
 
 const signInSuccess = (data) => {
   store.user = data.user
-  console.log('signin success')
+  console.log('signin was a success')
   console.log('store is' + store)
   $('.first-display').addClass('hiding')
   $('.logged-in-buttons').removeClass('hiding')
@@ -35,7 +36,7 @@ const signInFailure = (error) => {
 
 const signOutSuccess = () => {
   store.user = null
-  console.log(store)
+  console.log('sign out was a success')
   $('.first-display').removeClass('hiding')
   $('.logged-in-buttons').addClass('hiding')
   $('.user-status').html('Hm. You signed out.')

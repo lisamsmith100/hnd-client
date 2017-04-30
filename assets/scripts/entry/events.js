@@ -4,45 +4,63 @@ const api = require('./api')
 const ui = require('./ui')
 const getFormFields = require('../../../lib/get-form-fields.js')
 
-const onSignUp = function (event) {
+const onShowEntries = function (event) {
   event.preventDefault()
-  console.log('onSignUp button has been clicked')
+  console.log('onShowEntries button has been clicked')
+  // const data = getFormFields(event.target)
+  // console.log(data)
+  api.showEntries()
+  .then(ui.showEntriesSuccess)
+  .catch(ui.fail)
+}
+
+const onAddEntry = function (event) {
+  event.preventDefault()
   const data = getFormFields(event.target)
-  console.log(data)
-  api.signUp(data)
-  .done(ui.success)
+  api.addEntry(data)
+  .done(ui.addEntrySuccess)
   .fail(ui.fail)
 }
 
-const onSignIn = function (event) {
+const onShowOneEntry = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-  api.signIn(data)
-  .done(ui.signInSuccess)
+  api.showOneEntry(data)
+  .done(ui.showOneEntrySuccess)
   .fail(ui.fail)
 }
 
-const onSignOut = function (event) {
+const onUpdateEntry = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-  api.signOut(data)
-  .done(ui.signOutSuccess)
+  api.updateEntry(data)
+  .done(ui.updateEntrySuccess)
   .fail(ui.fail)
 }
 
-const onChangePassword = function (event) {
+const onHideEntry = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-  api.changePassword(data)
-  .done(ui.changePasswordSuccess)
+  api.hideEntry(data)
+  .done(ui.hideEntrySuccess)
+  .fail(ui.fail)
+}
+
+const onDeleteEntry = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  api.deleteEntry(data)
+  .done(ui.deleteEntrySuccess)
   .fail(ui.fail)
 }
 
 const addHandlers = () => {
-  $('#sign-up').on('submit', onSignUp)
-  $('#sign-in').on('submit', onSignIn)
-  $('#sign-out').on('submit', onSignOut)
-  $('#change-password').on('submit', onChangePassword)
+  $('#showAllHnD').on('click', onShowEntries),
+  $('#addNewHnD').on('submit', onAddEntry),
+  $('#showOneHnD').on('submit', onShowOneEntry),
+  $('#updateOneHnD').on('submit', onUpdateEntry),
+  $('#hideOneHnD').on('submit', onHideEntry),
+  $('#deleteOneHnD').on('submit', onDeleteEntry)
 }
 
 module.exports = {

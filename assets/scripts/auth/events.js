@@ -1,8 +1,8 @@
 'use strict'
 
+const getFormFields = require('../../../lib/get-form-fields.js')
 const api = require('./api')
 const ui = require('./ui')
-const getFormFields = require('../../../lib/get-form-fields.js')
 
 const onSignUp = function (event) {
   event.preventDefault()
@@ -10,8 +10,9 @@ const onSignUp = function (event) {
   const data = getFormFields(event.target)
   console.log(data)
   api.signUp(data)
-  .done(ui.success)
-  .fail(ui.fail)
+  .then(ui.success)
+  .catch(ui.fail)
+  // switched these from .done and .fail.  is that appropriate?
 }
 
 const onSignIn = function (event) {
@@ -20,8 +21,9 @@ const onSignIn = function (event) {
   const data = getFormFields(event.target)
   console.log(data)
   api.signIn(data)
-  .done(ui.signInSuccess)
-  .fail(ui.fail)
+  .then(ui.signInSuccess)
+  .catch(ui.fail)
+    // switched these from .done and .fail.  is that appropriate?
 }
 
 const onSignOut = function (event) {
@@ -30,8 +32,9 @@ const onSignOut = function (event) {
   const data = getFormFields(event.target)
   console.log(data)
   api.signOut(data)
-  .done(ui.signOutSuccess)
-  .fail(ui.fail)
+  .then(ui.signOutSuccess)
+  .catch(ui.fail)
+    // switched these from .done and .fail.  is that appropriate?
 }
 
 const onChangePassword = function (event) {
@@ -40,8 +43,9 @@ const onChangePassword = function (event) {
   const data = getFormFields(event.target)
   console.log(data)
   api.changePassword(data)
-  .done(ui.changePasswordSuccess)
-  .fail(ui.fail)
+  .then(ui.changePasswordSuccess)
+  .catch(ui.fail)
+    // switched these from .done and .fail.  is that appropriate?
 }
 
 const addHandlers = () => {
