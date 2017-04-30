@@ -7,6 +7,8 @@ const showEntriesSuccess = (data) => {
   store.entries = data.entries
   const userEntries = store.entries
   const userEntryArray = JSON.stringify(store.entries)
+  // let showEntriesHtml = showEntriesTemplate({ entries: data.entries })
+  // $('#content').append(showEntriesHtml)
   console.log('store.entries is ' + userEntries)
   $('#content').html('userEntryArray is ' + userEntryArray)
   console.log('store is' + store)
