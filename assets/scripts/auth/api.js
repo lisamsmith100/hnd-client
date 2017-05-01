@@ -26,10 +26,10 @@ const signIn = function (data) {
 }
 
 const signOut = function () {
-  console.log('signup data is ', data)
+  // data.user = null
   return $.ajax({
-    method: 'DELETE',
     url: config.apiOrigin + '/sign-out/' + store.user.id,
+    method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + store.user.token
     }
@@ -44,7 +44,7 @@ const changePassword = function (data) {
     headers: {
       Authorization: 'Token token=' + store.user.token
     },
-    data: data
+    data
   })
 }
 
