@@ -1,6 +1,7 @@
 'use strict'
 
 const showEntriesTemplate = require('../templates/hnd-listing.handlebars')
+const addEntryTemplate = require('../templates/hnd-listing.handlebars')
 // remove signIn and signOut
 const store = require('../store.js')
 // const entryEvents = require('./events.js')
@@ -22,8 +23,13 @@ const showEntriesFailure = (error) => {
 
 const addEntrySuccess = (data) => {
   store.entry = data.entry
-  console.log('store.entry is ', store.entry)
-  // $('#content').html('userEntryArray is ' + userEntryArray)
+  console.log('data.entry is ', data.entry)
+  console.log('data.user is ', data.user)
+  console.log('addEntry is a success')
+  const addEntryHtml = addEntryTemplate({ entry: data.entry })
+  console.log('addEntryHtml = ', addEntryHtml)
+  $('.content').append(addEntryHtml)
+  $('#addNewHnD').find('input:text, select, textarea').val('')
   console.log('addEntry is a success')
 }
 
@@ -33,14 +39,10 @@ const addEntryFailure = (error) => {
 }
 
 const showOneEntrySuccess = (data) => {
-  // store.entry = data.entry
-  // const userEntry = store.entry
-  // const userEntryArray = JSON.stringify(store.entry)
-  // console.log('store.entry is ', userEntry)
-  console.log('data is ', data)
-  // let showOneEntryHtml = showEntriesTemplate({ entry: data.entry.id })
-  // $('#content').append(showOneEntryHtml)
-  // console.log('store is', store)
+  store.entry.id = data.entry.id
+  console.log('data.entry.id is ', data.entry.id)
+  const showOneEntryHtml = showEntriesTemplate({ entries: data.entry.id })
+  $('.content').replace(showEntriesHtml)
   console.log('showOneEntry is a success')
   $('#showOneHnD').find('input:text, select, textarea').val('')
 }

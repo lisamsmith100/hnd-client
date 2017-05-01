@@ -4,6 +4,7 @@ const api = require('./api')
 const ui = require('./ui')
 // const entries = require('../templates/helpers/hnd-listing.handlebars')
 const getFormFields = require('../../../lib/get-form-fields.js')
+const store = require('../store')
 
 const onShowEntries = function (event) {
   event.preventDefault()
@@ -16,6 +17,7 @@ const onShowEntries = function (event) {
 const onAddEntry = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
+  console.log('data is ', data)
   api.addEntry(data)
   .done(ui.addEntrySuccess)
   .fail(ui.addEntryFailure)

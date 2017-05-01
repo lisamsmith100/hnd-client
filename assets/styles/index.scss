@@ -20,6 +20,7 @@ body {
   background-size:cover;
   background-position:center;
   outline:none;
+  color: #f0720a;
 }
 
 h1 {
@@ -105,7 +106,7 @@ input[type=password] {
     border: .094em solid #829c5d;
     border-radius: .625em;
     background-color: #d1d6bc;
-    box-shadow: 0 .375em .313em -0.313em #6ac531, inset 0 .063em #4da117, inset 0 -0.188em #b1ce7d;
+    box-shadow: 0 .375em .313em -0.313em #6ac531, inset 0 .063em #244b0b, inset 0 -0.188em #b1ce7d;
     color: #3f60ba;
     text-decoration: none;
     text-transform: uppercase;
@@ -132,6 +133,10 @@ input[type=submit] {
 
 fieldset {
   border:none;
+}
+
+.hiding {
+  display: none;
 }
 
 .btn {
@@ -217,7 +222,8 @@ fieldset {
   float: none;
 }
 
-.small {
+h1 small {
+  // color: #f0720a;
   color: #f0720a;
 }
 
