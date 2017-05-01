@@ -5,20 +5,18 @@ const store = require('../store.js')
 // const showEntriesTemplate = require('../templates/hnd-listing.handlebars')
 
 const showEntriesSuccess = (data) => {
-<<<<<<< HEAD
-  store.entries = data.entries
-  const userEntries = store.entries
-  const userEntryArray = JSON.stringify(store.entries)
-  // let showEntriesHtml = showEntriesTemplate({ entries: data.entries })
-  // $('#content').append(showEntriesHtml)
-  console.log('store.entries is ', userEntries)
-  $('#content').html('userEntryArray is ', userEntryArray)
-  console.log('store is', store)
-=======
+
+  // store.entries = data.entries
+  // const userEntries = store.entries
+  // const userEntryArray = JSON.stringify(store.entries)
+  // // let showEntriesHtml = showEntriesTemplate({ entries: data.entries })
+  // // $('#content').append(showEntriesHtml)
+  // console.log('store.entries is ', userEntries)
+  // $('#content').html('userEntryArray is ', userEntryArray)
+  // console.log('store is', store)
   console.log('data is ', data)
   // const showEntriesHtml = showEntriesTemplate({ entries: data.entries })
   // $('.content').append(showEntriesHtml)
->>>>>>> wkgbranch
   console.log('showEntries is a success')
 }
 

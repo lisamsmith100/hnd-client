@@ -1,13 +1,9 @@
 'use strict'
 // remove signIn and signOut
 const store = require('../store.js')
-<<<<<<< HEAD
-// const app = require('../app.js')
-// const entryEvents = require('../entries/events.js')
-=======
+
 const app = require('../app.js')
 const entryEvents = require('../entry/events.js')
->>>>>>> wkgbranch
 
 const signUpSuccess = (data) => {
   store.user = data.user
