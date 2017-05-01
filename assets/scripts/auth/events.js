@@ -10,8 +10,8 @@ const onSignUp = function (event) {
   const data = getFormFields(event.target)
   console.log('signup data is ', data)
   api.signUp(data)
-  .then(ui.success)
-  .catch(ui.fail)
+  .then(ui.signUpSuccess)
+  .catch(ui.signUpFailure)
   // switched these from .done and .fail.  is that appropriate?
 }
 
@@ -22,18 +22,16 @@ const onSignIn = function (event) {
   console.log('signin data is ', data)
   api.signIn(data)
   .then(ui.signInSuccess)
-  .catch(ui.fail)
+  .catch(ui.signInFailure)
     // switched these from .done and .fail.  is that appropriate?
 }
 
 const onSignOut = function (event) {
   event.preventDefault()
   console.log('sign out button has been clicked')
-  const data = getFormFields(event.target)
-  console.log('signout data is ', data)
-  api.signOut(data)
+  api.signOut()
   .then(ui.signOutSuccess)
-  .catch(ui.fail)
+  .catch(ui.signOutFailure)
     // switched these from .done and .fail.  is that appropriate?
 }
 
@@ -44,7 +42,7 @@ const onChangePassword = function (event) {
   console.log('change password data is ', data)
   api.changePassword(data)
   .then(ui.changePasswordSuccess)
-  .catch(ui.fail)
+  .catch(ui.changePasswordFailure)
     // switched these from .done and .fail.  is that appropriate?
 }
 

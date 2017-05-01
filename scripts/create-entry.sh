@@ -1,5 +1,5 @@
 #!/bin/bash
-#TOKEN=BAhJIiU2NzdjM2E4MmExNTgwMThlNDM4ZjlmNDc2NjhmZTNjMwY6BkVG--28254e556274f03845295dd66d24e92c53a4e4dc TITLE="first entry for user id 1 in production" sh scripts/create-entry.sh
+#TOKEN=BAhJIiU0ZDYwNTdmZDk4YjYyZDk1N2Y4MDY2NzgxMGY5MDM5ZAY6BkVG--5f3887a320814e1c5e0a248e8109e161fa022038 TITLE="first entry for user id 1 in production" sh scripts/create-entry.sh
 #TOKEN=BAhJIiU2NzdjM2E4MmExNTgwMThlNDM4ZjlmNDc2NjhmZTNjMwY6BkVG--28254e556274f03845295dd66d24e92c53a4e4dc TITLE="first entry for user id 1 in production" BACKSTORY="Backstory is that this is a class project deuce" STOPPER="update isn't working still" STATUS="open" sh scripts/create-entry.sh
 API="${API_ORIGIN:-https://hnd-api.herokuapp.com}"
 URL_PATH="/entries"
@@ -11,10 +11,10 @@ curl "${API}${URL_PATH}" \
   --data '{
     "entry": {
       "title": "'"${TITLE}"'"
-      "backstory": "'"${BACKSTORY}"'"
-      "stopper": "'"${STOPPER}"'"
-      "status": "'"${STATUS}"'"
-      "date_added": "'"${DATE_ADDED}"'"
+      "backstory": "'"${BACKSTORY}"'",
+      "stopper": "'"${STOPPER}"'",
+      "status": "'"${STATUS}"'",
+      "date_added": "'"${DATE_ADDED}"'",
       "deleted_flag": "'"${DELETED_FLAG}"'"
     }
   }'

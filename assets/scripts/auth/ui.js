@@ -2,7 +2,7 @@
 // remove signIn and signOut
 const store = require('../store.js')
 const app = require('../app.js')
-// const entryEvents = require('../entries/events.js')
+const entryEvents = require('../entry/events.js')
 
 const signUpSuccess = (data) => {
   store.user = data.user
@@ -28,7 +28,8 @@ const signInSuccess = (data) => {
   $('.first-display').addClass('hiding')
   $('.logged-in-display').removeClass('hiding')
   $('.user-status').html('You signed in successfully.')
-  $('.sign-in').find('input:text, input:password, select, textarea').val('')
+  $('.sign-in').find('input:text, select, textarea').val('')
+  // entryEvents.showEntries
 }
 
 const signInFailure = (error) => {
@@ -40,6 +41,7 @@ const signInFailure = (error) => {
 
 const signOutSuccess = () => {
   store.user = null
+  console.log('store is', store)
   console.log('sign out was a success')
   $('.first-display').removeClass('hiding')
   $('.logged-in-display').addClass('hiding')
@@ -55,16 +57,15 @@ const signOutFailure = (error) => {
 
 const changePasswordSuccess = () => {
   console.log('Password Successfully Changed.')
-  console.error(error)
   $('.logged-in-display').removeClass('hiding')
   $('.user-status').html('You changed your password.')
-  $('.change-password').find('input:text, input:password, select, textarea').val('')
+  $('.change-password').find('input:password[old], input:password[new], select, textarea').val('')
 }
 
 const changePasswordFailure = (error) => {
   console.log(store)
-  console.log('change password failed')
   console.error(error)
+  console.log('change password failed')
   $('.user-status').html('Your password-change failed.')
 }
 

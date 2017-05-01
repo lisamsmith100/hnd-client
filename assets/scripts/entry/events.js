@@ -8,7 +8,7 @@ const onShowEntries = function (event) {
   event.preventDefault()
   console.log('onShowEntries button has been clicked')
   // const data = getFormFields(event.target)
-  // console.log(data)
+  console.log(data)
   api.showEntries()
   .then(ui.showEntriesSuccess)
   .catch(ui.fail)
