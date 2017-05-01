@@ -20,9 +20,11 @@ const showEntries = function () {
 
 const addEntry = function (data) {
   console.log('called addEntry in the entry/api.js')
-  console.log('data is' + data)
+  console.log('data is', data)
+  store.entry = data.entry
+  // store.user.token = data.user.token
   return $.ajax({
-    url: config.apiOrigin + '/entries/',
+    url: config.apiOrigin + '/entries',
     method: 'POST',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -30,6 +32,7 @@ const addEntry = function (data) {
     data
   })
 }
+  // removed Content-Type: 'application/json'
 
 const showOneEntry = function (data) {
   console.log('called showOneEntry in the entry/api.js')
