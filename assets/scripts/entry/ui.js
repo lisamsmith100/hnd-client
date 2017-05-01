@@ -1,4 +1,6 @@
 'use strict'
+
+const showEntriesTemplate = require('../templates/hnd-listing.handlebars')
 // remove signIn and signOut
 const store = require('../store.js')
 // const entryEvents = require('./events.js')
@@ -15,6 +17,8 @@ const showEntriesSuccess = (data) => {
   // $('#content').html('userEntryArray is ', userEntryArray)
   // console.log('store is', store)
   console.log('data is ', data)
+  const showEntriesHtml = showEntriesTemplate({ entries: data.entries })
+  $('.content').append(showEntriesHtml)
   // const showEntriesHtml = showEntriesTemplate({ entries: data.entries })
   // $('.content').append(showEntriesHtml)
   console.log('showEntries is a success')

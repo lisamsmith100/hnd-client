@@ -2,16 +2,15 @@
 
 const api = require('./api')
 const ui = require('./ui')
+// const entries = require('../templates/helpers/hnd-listing.handlebars')
 const getFormFields = require('../../../lib/get-form-fields.js')
 
 const onShowEntries = function (event) {
   event.preventDefault()
   console.log('onShowEntries button has been clicked')
-  // const data = getFormFields(event.target)
-  console.log(data)
   api.showEntries()
   .then(ui.showEntriesSuccess)
-  .catch(ui.fail)
+  .catch(ui.showEntriesFailure)
 }
 
 const onAddEntry = function (event) {
@@ -19,7 +18,7 @@ const onAddEntry = function (event) {
   const data = getFormFields(event.target)
   api.addEntry(data)
   .done(ui.addEntrySuccess)
-  .fail(ui.fail)
+  .fail(ui.addEntryFailure)
 }
 
 const onShowOneEntry = function (event) {
@@ -27,7 +26,7 @@ const onShowOneEntry = function (event) {
   const data = getFormFields(event.target)
   api.showOneEntry(data)
   .done(ui.showOneEntrySuccess)
-  .fail(ui.fail)
+  .fail(ui.showOneEntryFailure)
 }
 
 const onUpdateEntry = function (event) {
@@ -35,7 +34,7 @@ const onUpdateEntry = function (event) {
   const data = getFormFields(event.target)
   api.updateEntry(data)
   .done(ui.updateEntrySuccess)
-  .fail(ui.fail)
+  .fail(ui.updateEntryFailure)
 }
 
 const onHideEntry = function (event) {
@@ -43,7 +42,7 @@ const onHideEntry = function (event) {
   const data = getFormFields(event.target)
   api.hideEntry(data)
   .done(ui.hideEntrySuccess)
-  .fail(ui.fail)
+  .fail(ui.hideEntryFailure)
 }
 
 const onDeleteEntry = function (event) {
@@ -51,7 +50,7 @@ const onDeleteEntry = function (event) {
   const data = getFormFields(event.target)
   api.deleteEntry(data)
   .done(ui.deleteEntrySuccess)
-  .fail(ui.fail)
+  .fail(ui.deleteEntryFailure)
 }
 
 const addHandlers = () => {
@@ -64,5 +63,11 @@ const addHandlers = () => {
 }
 
 module.exports = {
-  addHandlers
+  addHandlers,
+  onShowEntries,
+  onAddEntry,
+  onShowOneEntry,
+  onUpdateEntry,
+  onHideEntry,
+  onDeleteEntry
 }

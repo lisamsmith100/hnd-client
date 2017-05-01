@@ -1,5 +1,6 @@
 #!/bin/bash
-#EMAIL=firstuser@example.email PASSWORD=newpassy sh scripts/sign-in.sh
+#EMAIL=lms1 PASSWORD=passy sh scripts/sign-in.sh
+#from signupEMAIL=lms1 PASSWORD=passy PASSWORD_CONFIRMATION=passy sh scripts/sign-up.sh
 #EMAIL=seconduser@example.email PASSWORD=passy sh scripts/sign-in.sh
 #EMAIL=thirduser@example.email PASSWORD=passy sh scripts/sign-in.sh
 #EMAIL=fourthuser@example.email PASSWORD=passy sh scripts/sign-in.sh
