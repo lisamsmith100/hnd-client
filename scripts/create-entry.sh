@@ -21,13 +21,15 @@ curl "${API}${URL_PATH}" \
 
 echo
 
-# curl --include --request POST http://localhost:4741/entries \
+# curl --include --request POST https://hnd-api.herokuapp.com/entries \
 #   --header "Content-Type: application/json" \
 #   --data '{
 #     "entry": {
-#       "title": "this is a new entry",
-#       "backstory": "working on this project, I am trying to solve a problem",
-#       "stopper": "thrashing, lack of knowledge, staring at screen too long?",
-#       "status": "unsolved"
+#       "title": "Become scuba certified",
+#       "backstory": "I love to be underwater, requires study, practice, testing, challenging",
+#       "stopper": "can't breathe underwater, fear of unnatural surroundings, fear of not understanding equipment to notice issues with equipment",
+#       "status": "achieved"
 #     }
 #   }'
+
+#TOKEN="BAhJIiVmYTBlMzI1ZWQ3MjhlOTE1NjQ0YzkyYThhNWE1MmI3YQY6BkVG--5573357fa4f7eeb606e36407f96407a859298bfc" TITLE="Scuba Certification" BACKSTORY="Love being underwater, sh scripts/create-entry.sh
