@@ -3,7 +3,6 @@
 const showEntriesTemplate = require('../templates/hnd-listing.handlebars')
 const addEntryTemplate = require('../templates/hnd-listing.handlebars')
 const updateEntryTemplate = require('../templates/hnd-listing.handlebars')
-const deleteEntryTemplate = require('../templates/hnd-listing.handlebars')
 const store = require('../store.js')
 const entryEvents = require('./events.js')
 
@@ -22,14 +21,16 @@ const showEntriesFailure = (error) => {
 }
 
 const addEntrySuccess = (data) => {
+  console.log('you have reached api function')
   store.entry = data.entry
   console.log('data.entry is ', data.entry)
   console.log('data.user is ', data.user)
-  const addEntryHtml = addEntryTemplate({ entry: data.entry })
+  const addEntryHtml = addEntryTemplate({ entries: data.entries })
+  // switched out ({ entry: data.entry })
   console.log('addEntryHtml = ', addEntryHtml)
   $('.content').append(addEntryHtml)
   $('#addNewHnD').find('input:text, select, textarea').val('')
-  entryEvents.onShowEntries()
+  // entryEvents.onShowEntries()
   console.log('addEntry is a success')
 }
 
@@ -85,7 +86,6 @@ const updateEntryFailure = (error) => {
 const deleteEntrySuccess = (data) => {
   store.entry = data.entry
   console.log('store.entry is ', store.entry)
-  const deleteEntryHtml = deleteEntryTemplate({ entry: data.entry })
   console.log('deleteEntry is a success')
   $('#deleteOneHnD').find('input:text, select, textarea').val('')
   entryEvents.onShowEntries()

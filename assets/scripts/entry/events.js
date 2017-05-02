@@ -3,7 +3,7 @@
 const api = require('./api')
 const ui = require('./ui')
 const getFormFields = require('../../../lib/get-form-fields.js')
-const store = require('../store')
+// const store = require('../store')
 
 const onShowEntries = function (event) {
   event.preventDefault()
@@ -59,12 +59,12 @@ const onDeleteEntry = function (event) {
   .fail(ui.deleteEntryFailure)
 }
 
-const addHandlers = () => {
-  $('#showAllHnD').on('click', onShowEntries),
-  $('#addNewHnD').on('submit', onAddEntry),
+const addHandlers = function (event) {
+  $('#showAllHnD').on('click', onShowEntries)
+  $('#addNewHnD').on('submit', onAddEntry)
   // $('#showOneHnD').on('submit', onShowOneEntry),
-  $('#updateOneHnD').on('submit', onUpdateEntry),
-  // $('#hideOneHnD').on('submit', onHideEntry),
+  $('#updateOneHnD').on('submit', onUpdateEntry)
+  // $('#hideOneHnD').on('submit', onHideEntry)
   $('#deleteOneHnD').on('submit', onDeleteEntry)
 }
 
