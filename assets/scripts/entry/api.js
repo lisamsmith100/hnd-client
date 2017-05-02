@@ -79,12 +79,14 @@ const updateEntry = function (data) {
 const deleteEntry = function (data) {
   console.log('called deleteEntry in the entry/api.js')
   console.log('data is', data)
+  // store.entry = data.entry
   return $.ajax({
-    url: config.apiOrigin + '/entries' + data.id,
+    url: config.apiOrigin + '/entries'/ + data.id,
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + store.user.token
-    }
+    },
+    data
   })
 }
 

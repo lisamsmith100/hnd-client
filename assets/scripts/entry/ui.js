@@ -32,6 +32,7 @@ const addEntrySuccess = (data) => {
   $('#addNewHnD').find('input:text, select, textarea').val('')
   // entryEvents.onShowEntries()
   console.log('addEntry is a success')
+  entryEvents.onShowEntries()
 }
 
 const addEntryFailure = (error) => {
