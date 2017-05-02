@@ -90,7 +90,7 @@ const deleteEntrySuccess = (data) => {
   console.log('deleteEntry is a success')
   // const deleteEntryHtml = deleteEntryTemplate({ entry: data.entry })
   // $('.content').replace
-  //(deleteEntryHtml)
+  // (deleteEntryHtml)
   $('#deleteOneHnD').find('input:text, select, textarea').val('')
   console.log('data is ', data)
   entryEvents.onShowEntries()
