@@ -27,7 +27,7 @@ const addEntrySuccess = (data) => {
   console.log('data.user is ', data.user)
   const addEntryHtml = addEntryTemplate({ entry: data.entry })
   console.log('addEntryHtml = ', addEntryHtml)
-  $('.content').append(addEntryHtml)
+  $('.content').prepend(addEntryHtml)
   $('#addNewHnD').find('input:text, select, textarea').val('')
   entryEvents.onShowEntries()
   console.log('addEntry is a success')
@@ -58,7 +58,7 @@ const updateEntrySuccess = (data) => {
   console.log('data.user is ', data.user)
   const updateEntryHtml = updateEntryTemplate({ entry: data.entry })
   console.log('updateEntryHtml = ', updateEntryHtml)
-  $('.content').append(updateEntryHtml)
+  $('.content').replace(updateEntryHtml)
   $('#updateOneHnD').find('input:text, select, textarea').val('')
   entryEvents.onShowEntries()
   console.log('updateEntry is a success')
@@ -68,19 +68,19 @@ const updateEntryFailure = (error) => {
   console.log('updateEntry failed')
   console.error(error)
 }
-
-const hideEntrySuccess = (data) => {
-  store.entry = data.entry
-  console.log('store.entry is ', store.entry)
-  // $('#content').html('userEntryArray is ' + userEntryArray)
-  console.log('hideEntry is a success')
-  $('#hideOneHnD').find('input:text, select, textarea').val('')
-}
-
-const hideEntryFailure = (error) => {
-  console.log('hideEntry failed')
-  console.error(error)
-}
+//
+// const hideEntrySuccess = (data) => {
+//   store.entry = data.entry
+//   console.log('store.entry is ', store.entry)
+//   // $('#content').html('userEntryArray is ' + userEntryArray)
+//   console.log('hideEntry is a success')
+//   $('#hideOneHnD').find('input:text, select, textarea').val('')
+// }
+//
+// const hideEntryFailure = (error) => {
+//   console.log('hideEntry failed')
+//   console.error(error)
+// }
 
 const deleteEntrySuccess = (data) => {
   store.entry = data.entry
@@ -113,10 +113,10 @@ module.exports = {
   showOneEntryFailure,
   updateEntrySuccess,
   updateEntryFailure,
-  hideEntrySuccess,
-  hideEntryFailure,
+  // hideEntrySuccess,
+  // hideEntryFailure,
   deleteEntrySuccess,
-  deleteEntryFailure,
-  success,
-  failure
+  deleteEntryFailure
+  // success,
+  // failure
 }
