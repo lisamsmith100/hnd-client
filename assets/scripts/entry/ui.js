@@ -4,14 +4,12 @@ const showEntriesTemplate = require('../templates/hnd-listing.handlebars')
 const addEntryTemplate = require('../templates/hnd-listing.handlebars')
 const updateEntryTemplate = require('../templates/hnd-listing.handlebars')
 const store = require('../store.js')
-const entryEvents = require('./events.js')
+const events = require('./events.js')
 
 const showEntriesSuccess = (data) => {
   console.log('data is ', data)
   const showEntriesHtml = showEntriesTemplate({ entries: data.entries })
   $('.content').append(showEntriesHtml)
-  // const showEntriesHtml = showEntriesTemplate({ entries: data.entries })
-  // $('.content').append(showEntriesHtml)
   console.log('showEntries is a success')
 }
 
@@ -26,33 +24,17 @@ const addEntrySuccess = (data) => {
   console.log('data.entry is ', data.entry)
   console.log('data.user is ', data.user)
   const addEntryHtml = addEntryTemplate({ entries: data.entries })
-  // switched out ({ entry: data.entry })
   console.log('addEntryHtml = ', addEntryHtml)
   $('.content').append(addEntryHtml)
   $('#addNewHnD').find('input:text, select, textarea').val('')
-  // entryEvents.onShowEntries()
   console.log('addEntry is a success')
-  entryEvents.onShowEntries()
+  events.onShowEntries()
 }
 
 const addEntryFailure = (error) => {
   console.log('addEntry failed')
   console.error(error)
 }
-//
-// const showOneEntrySuccess = (data) => {
-//   store.entry.id = data.entry.id
-//   console.log('data.entry.id is ', data.entry.id)
-//   const showOneEntryHtml = showEntriesTemplate({ entries: data.entry.id })
-//   $('.content').replace(showOneEntryHtml)
-//   console.log('showOneEntry is a success')
-//   $('#showOneHnD').find('input:text, select, textarea').val('')
-// }
-//
-// const showOneEntryFailure = (error) => {
-//   console.log('showOneEntry failed')
-//   console.error(error)
-// }
 
 const updateEntrySuccess = (data) => {
   store.entry = data.entry
@@ -62,7 +44,7 @@ const updateEntrySuccess = (data) => {
   console.log('updateEntryHtml = ', updateEntryHtml)
   $('.content').replace(updateEntryHtml)
   $('#updateOneHnD').find('input:text, select, textarea').val('')
-  entryEvents.onShowEntries()
+  events.onShowEntries()
   console.log('updateEntry is a success')
 }
 
@@ -70,54 +52,27 @@ const updateEntryFailure = (error) => {
   console.log('updateEntry failed')
   console.error(error)
 }
-//
-// const hideEntrySuccess = (data) => {
-//   store.entry = data.entry
-//   console.log('store.entry is ', store.entry)
-//   // $('#content').html('userEntryArray is ' + userEntryArray)
-//   console.log('hideEntry is a success')
-//   $('#hideOneHnD').find('input:text, select, textarea').val('')
-// }
-//
-// const hideEntryFailure = (error) => {
-//   console.log('hideEntry failed')
-//   console.error(error)
-// }
 
 const deleteEntrySuccess = (data) => {
   store.entry = data.entry
   console.log('store.entry is ', store.entry)
   console.log('deleteEntry is a success')
   $('#deleteOneHnD').find('input:text, select, textarea').val('')
-  entryEvents.onShowEntries()
+  events.onShowEntries()
 }
 
 const deleteEntryFailure = (error) => {
   console.log('deleteEntry failed')
   console.error(error)
 }
-//
-// const success = (data) => {
-//   console.log(data)
-// }
-//
-// const failure = (error) => {
-//   console.error(error)
-// }
 
 module.exports = {
   showEntriesSuccess,
   showEntriesFailure,
   addEntrySuccess,
   addEntryFailure,
-  // showOneEntrySuccess,
-  // showOneEntryFailure,
   updateEntrySuccess,
   updateEntryFailure,
-  // hideEntrySuccess,
-  // hideEntryFailure,
   deleteEntrySuccess,
   deleteEntryFailure
-  // success,
-  // failure
 }
