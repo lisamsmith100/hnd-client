@@ -32,20 +32,20 @@ const addEntry = function (data) {
     data
   })
 }
-  // removed Content-Type: 'application/json'
-
-const showOneEntry = function (data) {
-  console.log('called showOneEntry in the entry/api.js')
-  console.log('data is ', data)
-  return $.ajax({
-    url: config.apiOrigin + '/entries',
-    method: 'GET',
-    headers: {
-      Authorization: 'Token token=' + store.user.token
-    },
-    data
-  })
-}
+// removed Content-Type: 'application/json'
+//
+// const showOneEntry = function (data) {
+//   console.log('called showOneEntry in the entry/api.js')
+//   console.log('data is ', data)
+//   return $.ajax({
+//     url: config.apiOrigin + '/entries',
+//     method: 'GET',
+//     headers: {
+//       Authorization: 'Token token=' + store.user.token
+//     },
+//     data
+//   })
+// }
 
 const updateEntry = function (data) {
   console.log('called updateEntry in the entry/api.js')
@@ -61,19 +61,19 @@ const updateEntry = function (data) {
     data
   })
 }
-
-const hideEntry = function (data) {
-  console.log('called hideEntry in the entry/api.js')
-  console.log('data is' + data)
-  return $.ajax({
-    url: config.apiOrigin + '/entries/',
-    method: 'PATCH',
-    headers: {
-      Authorization: 'Token token=' + store.user.token
-    },
-    data
-  })
-}
+//
+// const hideEntry = function (data) {
+//   console.log('called hideEntry in the entry/api.js')
+//   console.log('data is' + data)
+//   return $.ajax({
+//     url: config.apiOrigin + '/entries/',
+//     method: 'PATCH',
+//     headers: {
+//       Authorization: 'Token token=' + store.user.token
+//     },
+//     data
+//   })
+// }
 
 const deleteEntry = function (data) {
   console.log('called deleteEntry in the entry/api.js')
@@ -90,8 +90,8 @@ const deleteEntry = function (data) {
 module.exports = {
   showEntries,
   addEntry,
-  showOneEntry,
+  // showOneEntry,
   updateEntry,
-  hideEntry,
+  // hideEntry,
   deleteEntry
 }

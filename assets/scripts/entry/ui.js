@@ -27,7 +27,7 @@ const addEntrySuccess = (data) => {
   console.log('data.user is ', data.user)
   const addEntryHtml = addEntryTemplate({ entry: data.entry })
   console.log('addEntryHtml = ', addEntryHtml)
-  $('.content').prepend(addEntryHtml)
+  $('.content').append(addEntryHtml)
   $('#addNewHnD').find('input:text, select, textarea').val('')
   entryEvents.onShowEntries()
   console.log('addEntry is a success')
@@ -37,20 +37,20 @@ const addEntryFailure = (error) => {
   console.log('addEntry failed')
   console.error(error)
 }
-
-const showOneEntrySuccess = (data) => {
-  store.entry.id = data.entry.id
-  console.log('data.entry.id is ', data.entry.id)
-  const showOneEntryHtml = showEntriesTemplate({ entries: data.entry.id })
-  $('.content').replace(showOneEntryHtml)
-  console.log('showOneEntry is a success')
-  $('#showOneHnD').find('input:text, select, textarea').val('')
-}
-
-const showOneEntryFailure = (error) => {
-  console.log('showOneEntry failed')
-  console.error(error)
-}
+//
+// const showOneEntrySuccess = (data) => {
+//   store.entry.id = data.entry.id
+//   console.log('data.entry.id is ', data.entry.id)
+//   const showOneEntryHtml = showEntriesTemplate({ entries: data.entry.id })
+//   $('.content').replace(showOneEntryHtml)
+//   console.log('showOneEntry is a success')
+//   $('#showOneHnD').find('input:text, select, textarea').val('')
+// }
+//
+// const showOneEntryFailure = (error) => {
+//   console.log('showOneEntry failed')
+//   console.error(error)
+// }
 
 const updateEntrySuccess = (data) => {
   store.entry = data.entry
@@ -95,22 +95,22 @@ const deleteEntryFailure = (error) => {
   console.log('deleteEntry failed')
   console.error(error)
 }
-
-const success = (data) => {
-  console.log(data)
-}
-
-const failure = (error) => {
-  console.error(error)
-}
+//
+// const success = (data) => {
+//   console.log(data)
+// }
+//
+// const failure = (error) => {
+//   console.error(error)
+// }
 
 module.exports = {
   showEntriesSuccess,
   showEntriesFailure,
   addEntrySuccess,
   addEntryFailure,
-  showOneEntrySuccess,
-  showOneEntryFailure,
+  // showOneEntrySuccess,
+  // showOneEntryFailure,
   updateEntrySuccess,
   updateEntryFailure,
   // hideEntrySuccess,

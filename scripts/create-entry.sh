@@ -33,19 +33,19 @@
 # #     }
 # #   }'
 #
-# #TOKEN="BAhJIiVmYTBlMzI1ZWQ3MjhlOTE1NjQ0YzkyYThhNWE1MmI3YQY6BkVG--5573357fa4f7eeb606e36407f96407a859298bfc" TITLE="Scuba Certification" BACKSTORY="Love being underwater, sh scripts/create-entry.sh
+# #TOKEN="BAhJIiU0ZmRlNTQ2MTAzMDM0NDUyMDQ4MzhjZjAxMGMzZWM2MwY6BkVG--ee07e5223fdf0ec24a25914eb713517aff0faa9a" TITLE="Drive a Semi Truck" sh scripts/create-entry.sh
 #  # token BAhJIiViNTBlNTdjYTMxMmUwN2E4MDY0ZTVmOGRhZGUzNjZkMgY6BkVG--8ddb8d641de65c51d7c8186d7aa93f5be976d8fa
-https://hnd-api.herokuapp.com/entries
+# https://hnd-api.herokuapp.com/entries
  curl --include --request POST http://localhost:4741/entries \
    --header "Content-Type: application/json" \
    --header "Authorization: Token token=BAhJIiVkMGJlMjkyOGE1YTI3MTgzMzMwOWQyMjRiMDMzZWUwZAY6BkVG--cd76506cad9fb7326bc127ee307ce8234e4a3781" \
    --data '{
      "entry": {
-       "title": "scuba cert",
-       "backstory": "i like water",
+       "title": "drive a semi",
+       "backstory": "i like to drive",
        "stopper": "cant b reather underwater naturally",
        "status": "achieved",
-       "date_added": "2015-05-95",
+       "date_added": "2017-05-95",
        "deleted_flag": "false"
      }
    }'
