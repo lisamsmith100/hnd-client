@@ -21,14 +21,6 @@ const onAddEntry = function (event) {
   .done(ui.addEntrySuccess)
   .fail(ui.addEntryFailure)
 }
-//
-// const onShowOneEntry = function (event) {
-//   event.preventDefault()
-//   const data = getFormFields(event.target)
-//   api.showOneEntry(data)
-//   .done(ui.showOneEntrySuccess)
-//   .fail(ui.showOneEntryFailure)
-// }
 
 const onUpdateEntry = function (event) {
   event.preventDefault()
@@ -40,14 +32,6 @@ const onUpdateEntry = function (event) {
   .done(ui.updateEntrySuccess)
   .fail(ui.updateEntryFailure)
 }
-//
-// const onHideEntry = function (event) {
-//   event.preventDefault()
-//   const data = getFormFields(event.target)
-//   api.hideEntry(data)
-//   .done(ui.hideEntrySuccess)
-//   .fail(ui.hideEntryFailure)
-// }
 
 const onDeleteEntry = function (event) {
   event.preventDefault()
@@ -66,9 +50,7 @@ const onDeleteEntry = function (event) {
 const addHandlers = function (event) {
   $('#showAllHnD').on('click', onShowEntries)
   $('#addNewHnD').on('submit', onAddEntry)
-  // $('#showOneHnD').on('submit', onShowOneEntry),
   $('#updateOneHnD').on('submit', onUpdateEntry)
-  // $('#hideOneHnD').on('submit', onHideEntry)
   $('#deleteOneHnD').on('submit', onDeleteEntry)
 }
 
@@ -76,8 +58,6 @@ module.exports = {
   addHandlers,
   onShowEntries,
   onAddEntry,
-  // onShowOneEntry,
   onUpdateEntry,
-  // onHideEntry,
   onDeleteEntry
 }
