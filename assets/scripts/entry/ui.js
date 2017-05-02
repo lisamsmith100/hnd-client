@@ -3,7 +3,6 @@
 const showEntriesTemplate = require('../templates/hnd-listing.handlebars')
 const addEntryTemplate = require('../templates/hnd-listing.handlebars')
 const updateEntryTemplate = require('../templates/hnd-listing.handlebars')
-const deleteEntryTemplate = require('../templates/hnd-listing.handlebars')
 const store = require('../store.js')
 const events = require('./events.js')
 
@@ -23,13 +22,11 @@ const addEntrySuccess = (data) => {
   console.log('you have reached api function')
   store.entry = data.entry
   console.log('data.entry is ', data.entry)
-  console.log('data.user is ', data.user)
   const addEntryHtml = addEntryTemplate({ entries: data.entries })
   console.log('addEntryHtml = ', addEntryHtml)
   $('.content').append(addEntryHtml)
   $('#addNewHnD').find('input:text, select, textarea').val('')
   console.log('addEntry is a success')
-  events.onShowEntries()
 }
 
 const addEntryFailure = (error) => {
@@ -62,7 +59,6 @@ const deleteEntrySuccess = (data) => {
   // (deleteEntryHtml)
   $('#deleteOneHnD').find('input:text, select, textarea').val('')
   console.log('data is ', data)
-  events.onShowEntries()
 }
 
 const deleteEntryFailure = (error) => {
