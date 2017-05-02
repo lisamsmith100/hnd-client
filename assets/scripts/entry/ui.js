@@ -9,7 +9,7 @@ const events = require('./events.js')
 const showEntriesSuccess = (data) => {
   console.log('data is ', data)
   const showEntriesHtml = showEntriesTemplate({ entries: data.entries })
-  $('.content').append(showEntriesHtml)
+  $('.content').html(showEntriesHtml)
   console.log('showEntries is a success')
 }
 
