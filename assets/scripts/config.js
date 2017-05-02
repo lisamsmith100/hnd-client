@@ -2,6 +2,7 @@
 
 const config = {
   apiOrigins: {
+    development: 'http://localhost:7165',
     production: 'https://hnd-api.herokuapp.com/'
   }
 }
