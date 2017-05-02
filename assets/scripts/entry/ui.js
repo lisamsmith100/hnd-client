@@ -3,13 +3,14 @@
 const showEntriesTemplate = require('../templates/hnd-listing.handlebars')
 const addEntryTemplate = require('../templates/hnd-listing.handlebars')
 const updateEntryTemplate = require('../templates/hnd-listing.handlebars')
+const deleteEntryTemplate = require('../templates/hnd-listing.handlebars')
 const store = require('../store.js')
 const entryEvents = require('./events.js')
 
 const showEntriesSuccess = (data) => {
   console.log('data is ', data)
   const showEntriesHtml = showEntriesTemplate({ entries: data.entries })
-  $('.content').append(showEntriesHtml)
+  $('.content').html(showEntriesHtml)
   // const showEntriesHtml = showEntriesTemplate({ entries: data.entries })
   // $('.content').append(showEntriesHtml)
   console.log('showEntries is a success')
@@ -32,7 +33,7 @@ const addEntrySuccess = (data) => {
   $('#addNewHnD').find('input:text, select, textarea').val('')
   // entryEvents.onShowEntries()
   console.log('addEntry is a success')
-  entryEvents.onShowEntries()
+  // entryEvents.onShowEntries()
 }
 
 const addEntryFailure = (error) => {
@@ -55,14 +56,13 @@ const addEntryFailure = (error) => {
 // }
 
 const updateEntrySuccess = (data) => {
-  store.entry = data.entry
-  console.log('data.entry is ', data.entry)
-  console.log('data.user is ', data.user)
+  const updateInfo = data
+  console.log('data.entry is ', updateInfo)
   const updateEntryHtml = updateEntryTemplate({ entry: data.entry })
   console.log('updateEntryHtml = ', updateEntryHtml)
   $('.content').replace(updateEntryHtml)
   $('#updateOneHnD').find('input:text, select, textarea').val('')
-  entryEvents.onShowEntries()
+  // entryEvents.onShowEntries()
   console.log('updateEntry is a success')
 }
 
@@ -85,10 +85,14 @@ const updateEntryFailure = (error) => {
 // }
 
 const deleteEntrySuccess = (data) => {
-  store.entry = data.entry
-  console.log('store.entry is ', store.entry)
+  // store.entry = data.entry
+  // console.log('store.entry is ', data)
   console.log('deleteEntry is a success')
+  // const deleteEntryHtml = deleteEntryTemplate({ entry: data.entry })
+  // $('.content').replace
+  //(deleteEntryHtml)
   $('#deleteOneHnD').find('input:text, select, textarea').val('')
+  console.log('data is ', data)
   entryEvents.onShowEntries()
 }
 

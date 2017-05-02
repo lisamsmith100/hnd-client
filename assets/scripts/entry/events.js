@@ -55,6 +55,10 @@ const onDeleteEntry = function (event) {
   console.log('event is ', event)
   console.log('data being sent to api is ', data)
   api.deleteEntry(data)
+  // commenting out the above to try this:
+  // const data = event.target.id.split('-')
+  // console.log('id: ', data[2])
+  // api.deleteEntry(data[2])
   .done(ui.deleteEntrySuccess)
   .fail(ui.deleteEntryFailure)
 }
