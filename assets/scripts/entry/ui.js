@@ -2,10 +2,10 @@
 
 const showEntriesTemplate = require('../templates/hnd-listing.handlebars')
 const addEntryTemplate = require('../templates/hnd-listing.handlebars')
-// remove signIn and signOut
+const updateEntryTemplate = require('../templates/hnd-listing.handlebars')
+const deleteEntryTemplate = require('../templates/hnd-listing.handlebars')
 const store = require('../store.js')
-// const entryEvents = require('./events.js')
-// const showEntriesTemplate = require('../templates/hnd-listing.handlebars')
+const entryEvents = require('./events.js')
 
 const showEntriesSuccess = (data) => {
   console.log('data is ', data)
@@ -25,11 +25,11 @@ const addEntrySuccess = (data) => {
   store.entry = data.entry
   console.log('data.entry is ', data.entry)
   console.log('data.user is ', data.user)
-  console.log('addEntry is a success')
   const addEntryHtml = addEntryTemplate({ entry: data.entry })
   console.log('addEntryHtml = ', addEntryHtml)
   $('.content').append(addEntryHtml)
   $('#addNewHnD').find('input:text, select, textarea').val('')
+  entryEvents.onShowEntries()
   console.log('addEntry is a success')
 }
 
@@ -54,10 +54,14 @@ const showOneEntryFailure = (error) => {
 
 const updateEntrySuccess = (data) => {
   store.entry = data.entry
-  console.log('store.entry is ', store.entry)
-  // $('#content').html('userEntryArray is ' + userEntryArray)
-  console.log('updateEntry is a success')
+  console.log('data.entry is ', data.entry)
+  console.log('data.user is ', data.user)
+  const updateEntryHtml = updateEntryTemplate({ entry: data.entry })
+  console.log('updateEntryHtml = ', updateEntryHtml)
+  $('.content').append(updateEntryHtml)
   $('#updateOneHnD').find('input:text, select, textarea').val('')
+  entryEvents.onShowEntries()
+  console.log('updateEntry is a success')
 }
 
 const updateEntryFailure = (error) => {
@@ -79,9 +83,9 @@ const hideEntryFailure = (error) => {
 }
 
 const deleteEntrySuccess = (data) => {
-  store.entry = null
+  store.entry = data.entry
   console.log('store.entry is ', store.entry)
-  // $('#content').html('userEntryArray is ' + userEntryArray)
+  const deleteEntryHtml = deleteEntryTemplate({ entry: data.entry })
   console.log('deleteEntry is a success')
   $('#deleteOneHnD').find('input:text, select, textarea').val('')
 }

@@ -3,5 +3,15 @@
 <!-- goal: each entry's information is displayed within an ul with a data-id attribute. -->
 
  <!-- Developers, why are we using data-id and not just id? -->
-  <ul><h1><data-id="{{entry.id}}"> <small>Title: {{entry.title}}</small></h1></ul>
+  <ul><h1><data-id="{{entry.id}}"></h1>
+      <li>Title: {{entry.title}}
+      <li>ID No.: {{entry.id}}
+      <small>
+      <li>Backstory: {{entry.backstory}}
+      <li>Stopper: {{entry.stopper}}
+      <li>Status: {{entry.status}}
+      <li>Date Added: {{entry.date_added}}
+      <li>Last-Updated: {{entry.updated_at}}
+      <li>Hide (Deleted_flag) {{entry.deleted_flag}}
+    </small></ul>
 {{/each}}
