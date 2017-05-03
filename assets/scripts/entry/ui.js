@@ -51,14 +51,10 @@ const updateEntryFailure = (error) => {
 }
 
 const deleteEntrySuccess = (data) => {
-  // store.entry = data.entry
-  // console.log('store.entry is ', data)
   console.log('deleteEntry is a success')
-  // const deleteEntryHtml = deleteEntryTemplate({ entry: data.entry })
-  // $('.content').replace
-  // (deleteEntryHtml)
   $('#deleteOneHnD').find('input:text, select, textarea').val('')
   console.log('data is ', data)
+  $(this).html(' ')
 }
 
 const deleteEntryFailure = (error) => {
