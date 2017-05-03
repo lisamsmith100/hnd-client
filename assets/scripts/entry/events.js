@@ -3,11 +3,10 @@
 const api = require('./api')
 const ui = require('./ui')
 const getFormFields = require('../../../lib/get-form-fields.js')
-// const store = require('../store')
 
 const onShowEntries = function (event) {
   event.preventDefault()
-  console.log('onShowEntries button has been clicked')
+  // console.log('onShowEntries button has been clicked')
   api.showEntries()
   .then(ui.showEntriesSuccess)
   .catch(ui.showEntriesFailure)
@@ -16,7 +15,7 @@ const onShowEntries = function (event) {
 const onAddEntry = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-  console.log('data is ', data)
+  // console.log('data is ', data)
   api.addEntry(data)
   .done(ui.addEntrySuccess)
   .fail(ui.addEntryFailure)
@@ -25,9 +24,9 @@ const onAddEntry = function (event) {
 const onUpdateEntry = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-  console.log('onUpdateEntry has been called')
-  console.log('event is ', event)
-  console.log('data being sent to api is ', data)
+  // console.log('onUpdateEntry has been called')
+  // console.log('event is ', event)
+  // console.log('data being sent to api is ', data)
   api.updateEntry(data)
   .done(ui.updateEntrySuccess)
   .fail(ui.updateEntryFailure)
@@ -36,8 +35,8 @@ const onUpdateEntry = function (event) {
 const onDeleteEntry = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-  console.log('event is ', event)
-  console.log('data being sent to api is ', data)
+  // console.log('event is ', event)
+  // console.log('data being sent to api is ', data)
   api.deleteEntry(data)
   .done(ui.deleteEntrySuccess)
   .fail(ui.deleteEntryFailure)
