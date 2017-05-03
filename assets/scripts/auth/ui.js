@@ -47,6 +47,7 @@ const signOutSuccess = () => {
   $('.first-display').removeClass('hiding')
   $('.logged-in-display').addClass('hiding')
   $('.user-status').html('You signed out.')
+  $('.content').html(' ')
 }
 
 const signOutFailure = (error) => {
