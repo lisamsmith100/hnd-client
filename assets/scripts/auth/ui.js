@@ -28,7 +28,8 @@ const signInSuccess = (data) => {
   $('.first-display').addClass('hiding')
   $('.logged-in-display').removeClass('hiding')
   $('.user-status').html('You signed in successfully.')
-  $('.sign-in').find('input:text, select, textarea').val('')
+  // $('.sign-in').find('input:text, select, textarea').val('')
+  $('.sign-in').find('input:text, input:password, select, textarea').val('')
 }
 
 const signInFailure = (error) => {

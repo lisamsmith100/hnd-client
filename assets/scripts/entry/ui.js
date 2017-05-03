@@ -3,6 +3,7 @@
 const showEntriesTemplate = require('../templates/hnd-listing.handlebars')
 const addEntryTemplate = require('../templates/hnd-listing.handlebars')
 const updateEntryTemplate = require('../templates/hnd-listing.handlebars')
+const deleteEntryTemplate = require('../templates/hnd-listing.handlebars')
 const store = require('../store.js')
 const events = require('./events.js')
 
@@ -54,7 +55,7 @@ const deleteEntrySuccess = (data) => {
   // console.log('deleteEntry is a success')
   $('#deleteOneHnD').find('input:text, select, textarea').val('')
   // console.log('data is ', data)
-  $(this).html(' ')
+  $('#delete').html(' ')
 }
 
 const deleteEntryFailure = (error) => {
