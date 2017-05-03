@@ -1,78 +1,80 @@
-[![General Assembly Logo](https://camo.githubusercontent.com/1a91b05b8f4d44b5bbfb83abac2b0996d8e26c92/687474703a2f2f692e696d6775722e636f6d2f6b6538555354712e706e67)](https://generalassemb.ly/education/web-development-immersive)
+# Hopes and Dreams
 
-# browser-template
+Create patterns. Make quilts. Be inspired.
 
-A template for starting front-end projects. Webpack for `require` system, build
-pipeline, and development server. Boostrap and Handlebars.js included. No
-front-end frameworks included.
+- Live app: [Hopes and Dreams](https://lisamsmith100.github.io/hnd-client/)
+- Live API: [HND API](https://hnd-api.herokuapp.com/)
+- API repo on GitHub: [lisamsmith100/hnd-api](https://github.com/lisamsmith100/hnd-api)
+
+<!-- ![Screenshot of Quiltr](https://github.com/rhjones/quiltr/blob/master/readme-img/quiltr.png) -->
+
+## About Hopes and Dreams
+
+[Hopes And Dreams](https://lisamsmith100.github.io/hnd-client/) lets users generate a list of any type of item.  The list can be created from the browser, updated, and deleted.
+
+Hopes and Dreams is built using HTML, Javascript, CSS, Handlebars and relies on a Rails API/Postgres to persist data. Code for that API can be found at [lisamsmith100 api](https://github.com/lisamsmith100/hnd-api).
+
+## Project Planning
+
+[hnd-client/wdi-proj2-plan.xlsx]
+
+### User Stories
+
+- (COMPLETED) I want to be able to generate random patterns w/o logging in
+- (COMPLETED) I want to be able to upload multiple photos of each quilt that I make
+- I want to be able to sort the project gallery by quilt size, block size, and # of colors
+- I want to view a pattern that includes the following: block counts for each type/color, fabric amounts for each color, and basic instructions
+- (COMPLETED) The user will only be able to log in, log out upon first navigating to the site but after signing in, will be able to sign out or change password or use the site functionality once signed-in.
+- (COMPLETED)The user will be able to create entries for their "own" list of hopes and dreams.
+- (PARTIALLY COMPLETED) The user will be able to view all entries or one entry in their "own" list of hopes and dreams.
+- (COMPLETED) The user will be able to update one entry at a time from their "own" list of hopes and dreams.
+- The user will be able to check off entries and retrieve completed entries from their "own" list of hopes and dreams.
+- (PARTIALLY COMPLETED) The user will be able to delete entries and retrieve the deleted entries from their "own" list of hopes and dreams.
+
+The user story and the partial of other user stories that were not completed, were bonuses.
+
+### Wireframes
+- [Original Wirefram](http://imgur.com/a/G4Gr3)
+  Due to time constraints, I was unable to spend the time needed to conform to the original appearance/shape in the UI.
+
+### Data Model
+
+- [ERD](http://imgur.com/8BPw6qv)
+- For full details, see the api repo [lisamsmith100/hnd-api](https://github.com/lisamsmith100/hnd-api)
+- For preliminary project notes, see the Full-Stack Project Practice repo [https://github.com/ga-wdi-boston/full-stack-project-practice/pull/48/commits/aa529ed455aeaf8d5819d7c897729eaa57fb5b75?short_path=0394c7c#diff-0394c7cf5380b3a7437e6f8e1226e20a]
+
+## Development Process
+
+I started thinking about the process from project 1 (game project), as well as the repeated routing in class for building apis (scaffold, model, database creation).
+
+I created a spreadsheet listing high level Tasks and then broken them down into smaller tasks.
+
+Once I had a list of tasks, I looked at them each day, prioritized, and marked progress.  The spreadsheet is saved in this repo here [hnd-client/wdi-proj2-plan.xlsx].
+
+Based on advice from consultants, I decided to start building the API.  I reviewed class notes, solution branches, and diagnostics for ideas, as well as reviewing homework material/resources.
+
+I kept problems and tasks to the smallest possible in order to fully tackle each problem at hand.  I ran into an issue while construction the create entry function.  The curl requests were working correctly. The issue was the forms in html used name=entry while Rails expected 'entries.'  This was a helpful discovery as it solved issues for update and delete.
+
+I kept the html work to a minimum, using code from authentication and handlebars from our lecture.  Given more time, I would have incorporated use of modals to handle the form input.
 
 ## Dependencies
 
-Install with `npm install`.
+Install build dependencies with `npm install`.
 
--   [Webpack](https://webpack.github.io)
+-   [Webpack](https://webpack.github.io/)
 -   [Bootstrap](http://getbootstrap.com)
--   [Handlebars.js](http://handlebarsjs.com)
+-   [Handlebars.js](http://handlebarsjs.com/)
 
-At the beginning of each cohort, update the versions in
-[`package.json`](package.json) by replace all versions with a glob (`*`) and
-running `npm update --save && npm update --save-dev`. You may wish to test these
-changes by deleting the `node_modules` directory and running `npm install`.
-Fix any conflicts.
+## Next Steps
 
-## Installation
-
-1.  [Download](../../archive/master.zip) this template.
-1.  Unzip and rename the template directory.
-1.  Empty [`README.md`](README.md) and fill with your own content.
-1.  Move into the new project and `git init`.
-1.  Install dependencies with `npm install`.
-
-## Structure
-
-Dependencies are stored in [`package.json`](package.json).
-
-Do not configure `grunt` packages directly in the
-[`Gruntfile.js`](Gruntfile.js). Instead, store configurations in the
-[`grunt`](grunt) directory. You won't need a top-level key, since that's
-generated by the `Gruntfile.js` based on the filename of the configuration
-object stored in the `grunt` directory.
-
-Developers should store JavaScript files in [`assets/scripts`](assets/scripts).
-The "manifest" or entry-point is
-[`assets/scripts/index.js`](assets/scripts/index.js). In general, only
-application initialization goes in this file. It's normal for developers to
-start putting all code in this file, but encourage them to break out different
-responsibilities and use the `require` syntax put references where they're
-needed.
-
-Developers should set `config.apiOrigins.production` (and
-`config.apiOrigins.development` if it differs from the default).  With
-`apiOrigins` set, developers may rely on `config.apiOrigin` as the base for API
-URLs.
-
-Developers should store styles in [`assets/styles`](assets/styles) and load them
-from [`assets/styles/index.scss`](assets/styles/index.scss).
-
-Developers should use [getFormFields](forms.md) to retrieve form data to send to
-an API.
-
-To deploy a browser-template based SPA, run `grunt deploy`.
-
-## Tasks
-
-Developers should run these often!
-
--   `grunt nag` or just `grunt`: runs code quality analysis tools on your code
-    and complains
--   `grunt reformat`: reformats all your code in a standard style
--   `grunt <server|serve|s>`: generates bundles, watches, and livereloads
--   `grunt test`: runs any automated tests, depends on `grunt build`
--   `grunt build`: place bundled styles and scripts where `index.html` can find
-    them
+- Build functionality to add buttons at end of each entry for delete and update.
+- Build functionality to update the list without having to click button to show all entries.
+- Improve UI appearance with making the headers/legends hyperlinks, hiding buttons
+  and text boxes, only to display when clicking on the hyperlinks.
+- Improve UI appearance with borders, boxes.
+- Make use of additional attributes of the table.
 
 ## [License](LICENSE)
 
 1.  All content is licensed under a CC­BY­NC­SA 4.0 license.
-1.  All software code is licensed under GNU GPLv3. For commercial use or
-    alternative licensing, please contact legal@ga.co.
+1.  All software code is licensed under GNU GPLv3.
