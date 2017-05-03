@@ -6,7 +6,7 @@ Create patterns. Make quilts. Be inspired.
 - Live API: [HND API](https://hnd-api.herokuapp.com/)
 - API repo on GitHub: [lisamsmith100/hnd-api](https://github.com/lisamsmith100/hnd-api)
 
-<!-- ![Screenshot of Quiltr](https://github.com/rhjones/quiltr/blob/master/readme-img/quiltr.png) -->
+![Screenshot of Hopes and Dreams](hnd-client/HopesAndDreamsScreenShot.png)
 
 ## About Hopes and Dreams
 
