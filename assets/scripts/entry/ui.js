@@ -55,7 +55,7 @@ const deleteEntrySuccess = (data) => {
   // console.log('deleteEntry is a success')
   $('#deleteOneHnD').find('input:text, select, textarea').val('')
   // console.log('data is ', data)
-  $('#delete').hide()
+  $('#delete').html(' ')
 }
 
 const deleteEntryFailure = (error) => {
