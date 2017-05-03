@@ -5,11 +5,6 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 // @import 'typography';
 // @import 'theme';
 
-// .list-div {
-//   background-image: url('./images/jonesislandsunset.jpg');
-// }
-
-// .container-fluid    .user-info
 body {
   background: url('./images/hopesandreams.jpg') center;
   display: block;
@@ -27,13 +22,6 @@ h1 {
   margin-left: 10px;
   color: #d3e37f;
 }
-
-// .first-display, .logged-in-button {
-//   background-color: #ab2dc3;
-// }
-// .user-info {
-//   background: url('./images/jonesislandsunset.jpg') center;
-// }
 
 li {
   margin-left: 50px;
@@ -56,14 +44,8 @@ legend {
 
 form {
   float:none;
-  // display: inline-block;
   border:none;
   padding: .938em 1.875em;
-  // border: .094em solid #829c5d;
-  // border-radius: .625em;
-  // background-color: #d3e37f;
-  // box-shadow: 0 .375em .313em -0.313em #6ac531, inset 0 .063em #4da117, inset 0 -0.188em #b1ce7d;
-  // color: #3f60ba;
   text-decoration: none;
   text-transform: uppercase;
   text-shadow: 0 .063em #154969;
@@ -71,15 +53,6 @@ form {
   font: bold 1.8rem;
 }
 input[type=text] {
-    // padding: 0;
-    // height: 30px;
-    // position: relative;
-    // left: 0;
-    // outline: none;
-    // border: 1px solid #cdcdcd;
-    // border-color: rgba(0,0,0,.15);
-    // background-color: white;
-    // font-size: 16px;
     float:none;
     display: inline-block;
     padding: .938em 1.875em;
@@ -96,15 +69,6 @@ input[type=text] {
 }
 
 input[type=password] {
-    // padding: 0;
-    // height: 30px;
-    // position: relative;
-    // left: 0;
-    // outline: none;
-    // border: 1px solid #cdcdcd;
-    // border-color: rgba(0,0,0,.15);
-    // background-color: white;
-    // font-size: 16px;
     float:none;
     display: inline-block;
     padding: .938em 1.875em;
@@ -221,6 +185,15 @@ fieldset {
   text-shadow: 0 .063em #154969;
   cursor:pointer;
   font: bold 1.8rem;
+}
+
+.entry-id-input .entry-title-input .entry-backstory-input .entry-stopper-input .entry-status-input .entry-deleted_flag-input:hover {
+  background-color: #c8ea14;
+  box-shadow: 0 .125em #3a4d90, inset 0 .063em #c5e7b0, inset 0 -0.188em #154969;
+}
+
+.entry-id-input .entry-title-input .entry-backstory-input .entry-stopper-input .entry-status-input .entry-deleted_flag-input:active {
+   box-shadow: inset 0 0 1.094em #51b207, inset 0 .063em #390668, inset 0 -0.188em #682CA0, 0 .063em #6e922f;
 }
 
 .list-button-div {
