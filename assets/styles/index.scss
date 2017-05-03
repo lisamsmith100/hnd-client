@@ -37,6 +37,11 @@ h1 {
 
 li {
   margin-left: 50px;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-shadow: 0 .063em #154969;
+  cursor:pointer;
+  font: bold 1.8rem;
 }
 
 
@@ -222,9 +227,15 @@ fieldset {
   float: none;
 }
 
-h1 small {
-  // color: #f0720a;
+h2 {
+  // color: #cbcdd4;
   color: #f0720a;
+  // color: #0c2d85;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-shadow: 0 .063em #154969;
+  cursor:pointer;
+  font: bold 1.8rem;
 }
 
 #showAllHnD,#addNewHnD, #showOneHnD, #updateOneHnD, #clearHnD, #removeOneHnD {
