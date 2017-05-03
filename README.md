@@ -1,6 +1,6 @@
 # Hopes and Dreams
 
-Create patterns. Make quilts. Be inspired.
+An app for a list of whatever -- your hopes, your dreams, everything inbetween.
 
 - Live app: [Hopes and Dreams](https://lisamsmith100.github.io/hnd-client/)
 - Live API: [HND API](https://hnd-api.herokuapp.com/)
@@ -16,14 +16,10 @@ Hopes and Dreams is built using HTML, Javascript, CSS, Handlebars and relies on 
 
 ## Project Planning
 
-[hnd-client/wdi-proj2-plan.xlsx]
+[project plan](https://hnd-client/wdi-proj2-plan.xlsx}
 
 ### User Stories
 
-- (COMPLETED) I want to be able to generate random patterns w/o logging in
-- (COMPLETED) I want to be able to upload multiple photos of each quilt that I make
-- I want to be able to sort the project gallery by quilt size, block size, and # of colors
-- I want to view a pattern that includes the following: block counts for each type/color, fabric amounts for each color, and basic instructions
 - (COMPLETED) The user will only be able to log in, log out upon first navigating to the site but after signing in, will be able to sign out or change password or use the site functionality once signed-in.
 - (COMPLETED)The user will be able to create entries for their "own" list of hopes and dreams.
 - (PARTIALLY COMPLETED) The user will be able to view all entries or one entry in their "own" list of hopes and dreams.
@@ -31,7 +27,7 @@ Hopes and Dreams is built using HTML, Javascript, CSS, Handlebars and relies on 
 - The user will be able to check off entries and retrieve completed entries from their "own" list of hopes and dreams.
 - (PARTIALLY COMPLETED) The user will be able to delete entries and retrieve the deleted entries from their "own" list of hopes and dreams.
 
-The user story and the partial of other user stories that were not completed, were bonuses.
+The user story and the partial of other user stories that were not completed were stretch user stories.
 
 ### Wireframes
 - [Original Wirefram](http://imgur.com/a/G4Gr3)
@@ -45,17 +41,19 @@ The user story and the partial of other user stories that were not completed, we
 
 ## Development Process
 
-I started thinking about the process from project 1 (game project), as well as the repeated routing in class for building apis (scaffold, model, database creation).
+I started thinking about the process from project 1 (game project), as well as the repeated routing in class for building apis (scaffold, model, database creation).  I wanted to be diligent about keeping an updated evolving project plan.
 
-I created a spreadsheet listing high level Tasks and then broken them down into smaller tasks.
+I created a spreadsheet listing high level tasks and then broken them down into smaller tasks.
 
-Once I had a list of tasks, I looked at them each day, prioritized, and marked progress.  The spreadsheet is saved in this repo here [hnd-client/wdi-proj2-plan.xlsx].
+Once I had a list of tasks, I looked at them each day, added new tasks, prioritized, and marked progress.  The spreadsheet is saved in the repo here [hnd-client/wdi-proj2-plan.xlsx].
 
-Based on advice from consultants, I decided to start building the API.  I reviewed class notes, solution branches, and diagnostics for ideas, as well as reviewing homework material/resources.
+Based on advice from consultants, I decided to start building the API first.  I reviewed class notes, solution branches, and diagnostics for ideas, as well as reviewing homework material/resources.  This was a major step in my learning to become a developer in that I was accountable for the data and design of the system so I took the steps to create the database, model, serializer, and controller very slowly, having written down the steps before I executed them.
 
-I kept problems and tasks to the smallest possible in order to fully tackle each problem at hand.  I ran into an issue while construction the create entry function.  The curl requests were working correctly. The issue was the forms in html used name=entry while Rails expected 'entries.'  This was a helpful discovery as it solved issues for update and delete.
+I kept problems and tasks to the smallest possible in order to fully tackle each problem at hand.  I ran into an issue while constructing the create entry function.  The curl requests were working correctly. The issue was that the forms in html used name=entry while Rails expected 'entries.'  I updated Rails controller parameters to solve this problem I was having.This was a helpful discovery as it solved issues for update and delete functionality.
 
-I kept the html work to a minimum, using code from authentication and handlebars from our lecture.  Given more time, I would have incorporated use of modals to handle the form input.
+I worked on the html once the curl requests were giving good results for Rails API.
+
+I kept the html work to a minimum, using code from authentication and handlebars from our lecture.  Given more time, I would have incorporated use of modals to handle the form input and made some additional adjustments for a more svelte UI.
 
 ## Dependencies
 
