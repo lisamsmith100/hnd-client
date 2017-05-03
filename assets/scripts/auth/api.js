@@ -1,14 +1,10 @@
 'use strict'
 
-// const app = require('../app.js')
 const config = require('../config')
 const store = require('../store')
-// const getFormFields = require('../../../lib/get-form-fields.js');
-
-// authApi.signUp(authUi.success, authUi.failure, data);
 
 const signUp = function (data) {
-  console.log('signup data is ', data)
+  // console.log('signup data is ', data)
   return $.ajax({
     url: config.apiOrigin + '/sign-up/',
     method: 'POST',
@@ -17,7 +13,7 @@ const signUp = function (data) {
 }
 
 const signIn = function (data) {
-  console.log('signup data is ', data)
+  // console.log('signup data is ', data)
   return $.ajax({
     url: config.apiOrigin + '/sign-in/',
     method: 'POST',
@@ -26,7 +22,6 @@ const signIn = function (data) {
 }
 
 const signOut = function () {
-  // data.user = null
   return $.ajax({
     url: config.apiOrigin + '/sign-out/' + store.user.id,
     method: 'DELETE',
@@ -37,7 +32,7 @@ const signOut = function () {
 }
 
 const changePassword = function (data) {
-  console.log('chg pwd data is ', data)
+  // console.log('chg pwd data is ', data)
   return $.ajax({
     method: 'PATCH',
     url: config.apiOrigin + '/change-password/' + store.user.id,
