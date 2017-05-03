@@ -1,6 +1,6 @@
 # Hopes and Dreams
 
-Create patterns. Make quilts. Be inspired.
+An app for a list of whatever -- your hopes, your dreams, everything inbetween.
 
 - Live app: [Hopes and Dreams](https://lisamsmith100.github.io/hnd-client/)
 - Live API: [HND API](https://hnd-api.herokuapp.com/)
