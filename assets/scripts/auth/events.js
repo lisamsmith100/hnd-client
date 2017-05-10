@@ -3,6 +3,7 @@
 const getFormFields = require('../../../lib/get-form-fields.js')
 const api = require('./api')
 const ui = require('./ui')
+const entryApi = require('../entry/api.js')
 
 const onSignUp = function (event) {
   event.preventDefault()
@@ -12,7 +13,6 @@ const onSignUp = function (event) {
   api.signUp(data)
   .done(ui.signUpSuccess)
   .fail(ui.signUpFailure)
-  // switched these from .done and .fail.  is that appropriate?
 }
 
 const onSignIn = function (event) {
@@ -21,9 +21,9 @@ const onSignIn = function (event) {
   const data = getFormFields(event.target)
   // console.log('signin data is ', data)
   api.signIn(data)
+  .then(entryApi.onShowEntries)
   .done(ui.signInSuccess)
-  .catch(ui.signInFailure)
-    // switched these from .done and .fail.  is that appropriate?
+  .fail(ui.signInFailure)
 }
 
 const onSignOut = function (event) {
@@ -31,8 +31,7 @@ const onSignOut = function (event) {
   // console.log('sign out button has been clicked')
   api.signOut()
   .done(ui.signOutSuccess)
-  .catch(ui.signOutFailure)
-    // switched these from .done and .fail.  is that appropriate?
+  .fail(ui.signOutFailure)
 }
 
 const onChangePassword = function (event) {
@@ -42,8 +41,7 @@ const onChangePassword = function (event) {
   // console.log('change password data is ', data)
   api.changePassword(data)
   .done(ui.changePasswordSuccess)
-  .catch(ui.changePasswordFailure)
-    // switched these from .done and .fail.  is that appropriate?
+  .fail(ui.changePasswordFailure)
 }
 
 const addHandlers = () => {
