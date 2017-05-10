@@ -38,7 +38,8 @@ const addEntryFailure = (error) => {
 const updateEntrySuccess = (data) => {
   // const updateInfo = data
   // console.log('data.entry is ', updateInfo)
-  const updateEntryHtml = updateEntryTemplate({ entry: data.entry })
+  const showEntriesHtml = showEntriesTemplate({ entries: data.entries })
+  // const updateEntryHtml = updateEntryTemplate({ entry: data.entry })
   // console.log('updateEntryHtml = ', updateEntryHtml)
   $('.content').replace(updateEntryHtml)
   $('#updateOneHnD').find('input:text, select, textarea').val('')
