@@ -6,6 +6,7 @@ const updateEntryTemplate = require('../templates/hnd-listing.handlebars')
 const deleteEntryTemplate = require('../templates/hnd-listing.handlebars')
 const store = require('../store.js')
 const events = require('./events.js')
+const api = require('./api.js')
 
 const showEntriesSuccess = (data) => {
   // console.log('data is ', data)
@@ -28,6 +29,9 @@ const addEntrySuccess = (data) => {
   $('.content').append(addEntryHtml)
   $('#addNewHnD').find('input:text, select, textarea').val('')
   // console.log('addEntry is a success')
+  api.showEntries(data)
+    .then(showEntriesSuccess)
+    .catch(showEntriesFailure)
 }
 
 const addEntryFailure = (error) => {
@@ -45,6 +49,9 @@ const updateEntrySuccess = (data) => {
   $('#updateOneHnD').find('input:text, select, textarea').val('')
   // events.onShowEntries()
   // console.log('updateEntry is a success')
+  api.showEntries(data)
+    .then(showEntriesSuccess)
+    .catch(showEntriesFailure)
 }
 
 const updateEntryFailure = (error) => {
@@ -57,6 +64,9 @@ const deleteEntrySuccess = (data) => {
   $('#deleteOneHnD').find('input:text, select, textarea').val('')
   // console.log('data is ', data)
   $('#delete').html(' ')
+  api.showEntries(data)
+    .then(showEntriesSuccess)
+    .catch(showEntriesFailure)
 }
 
 const deleteEntryFailure = (error) => {

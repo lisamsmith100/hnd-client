@@ -4,6 +4,8 @@ const store = require('../store.js')
 
 const app = require('../app.js')
 const entryEvents = require('../entry/events.js')
+const api = require('../entry/api.js')
+const ui = require('../entry/ui.js')
 
 const signUpSuccess = (data) => {
   store.user = data.user
@@ -30,6 +32,9 @@ const signInSuccess = (data) => {
   $('.user-status').html('You signed in successfully.')
   // $('.sign-in').find('input:text, select, textarea').val('')
   $('.sign-in').find('input:text, input:password, select, textarea').val('')
+  api.showEntries(data)
+    .then(ui.showEntriesSuccess)
+    .catch(ui.showEntriesFailure)
 }
 
 const signInFailure = (error) => {
