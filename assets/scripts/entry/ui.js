@@ -10,6 +10,9 @@ const api = require('./api.js')
 
 const showEntriesSuccess = (data) => {
   // console.log('data is ', data)
+  data.entries.sort(function (a, b) {
+    return a.id - b.id
+  })
   const showEntriesHtml = showEntriesTemplate({ entries: data.entries })
   $('.content').html(showEntriesHtml)
   // console.log('showEntries is a success')
