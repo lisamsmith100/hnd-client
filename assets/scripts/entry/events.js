@@ -47,6 +47,9 @@ const addHandlers = function (event) {
   $('#addNewHnD').on('submit', onAddEntry)
   $('#updateOneHnD').on('submit', onUpdateEntry)
   $('#deleteOneHnD').on('submit', onDeleteEntry)
+  $('#addNewHnD').trigger('reset')
+  $('#updateOneHnD').trigger('reset')
+  $('#deleteOneHnD').trigger('reset')
 }
 
 module.exports = {

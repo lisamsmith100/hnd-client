@@ -26,7 +26,7 @@ const addEntrySuccess = (data) => {
   const addEntryHtml = addEntryTemplate({ entries: data.entries })
   // console.log('addEntryHtml = ', addEntryHtml)
   $('.content').append(addEntryHtml)
-  $('.addNewHnD').find('input:text, select, textarea').val('')
+  $('#addNewHnD').find('input:text, select, textarea').val('')
   // console.log('addEntry is a success')
 }
 
@@ -37,12 +37,12 @@ const addEntryFailure = (error) => {
 
 const updateEntrySuccess = (data) => {
   // const updateInfo = data
-  // console.log('data.entry is ', updateInfo)
+  console.log('data.entry is ', data)
   const showEntriesHtml = showEntriesTemplate({ entries: data.entries })
   // const updateEntryHtml = updateEntryTemplate({ entry: data.entry })
   // console.log('updateEntryHtml = ', updateEntryHtml)
   $('.content').replace(showEntriesHtml)
-  $('.updateOneHnD').find('input:text, select, textarea').val('')
+  $('#  updateOneHnD').find('input:text, select, textarea').val('')
   // events.onShowEntries()
   // console.log('updateEntry is a success')
 }
