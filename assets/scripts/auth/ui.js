@@ -18,7 +18,7 @@ const signUpSuccess = (data) => {
 const signUpFailure = (error) => {
   // console.log('signup was a failure')
   // console.log(error)
-  $('.user-status').html('Your sign-up failed.  Try a new email or password combo.')
+  $('.user-status').html('Your sign-up failed.  Try a new email / password combination.')
   $('.sign-up').find('input:text, input:password, select, textarea').val('')
 }
 
@@ -29,7 +29,7 @@ const signInSuccess = (data) => {
   // console.log('store is', store)
   $('.first-display').addClass('hiding')
   $('.logged-in-display').removeClass('hiding')
-  $('.user-status').html('You are signed in.')
+  $('.user-status').html('Welcome.  You are signed in.')
   // $('.sign-in').find('input:text, select, textarea').val('')
   $('.sign-in').find('input:text, input:password, select, textarea').val('')
   api.showEntries(data)
@@ -50,7 +50,7 @@ const signOutSuccess = () => {
   // console.log('sign out was a success')
   $('.first-display').removeClass('hiding')
   $('.logged-in-display').addClass('hiding')
-  $('.user-status').html('You are no longer signed.')
+  $('.user-status').html('You are no longer signed in.')
   $('.content').html(' ')
 }
 
@@ -65,7 +65,7 @@ const changePasswordSuccess = () => {
   // console.log('Password Successfully Changed.')
   $('.logged-in-display').removeClass('hiding')
   $('.user-status').html('You successfully changed your password.')
-  $('.change-password').find('input:password[old], input:password[new], select, textarea').val('')
+  $('.change-password').find('input:password, input:password, select, textarea').val('')
 }
 
 const changePasswordFailure = (error) => {
@@ -73,6 +73,7 @@ const changePasswordFailure = (error) => {
   // console.error(error)
   // console.log('change password failed')
   $('.user-status').html('Your password-change failed.')
+    $('.change-password').find('input:password, input:password, select, textarea').val('')
 }
 
 const success = (data) => {
