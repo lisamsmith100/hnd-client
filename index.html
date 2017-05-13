@@ -75,6 +75,7 @@
       <form id="addNewHnD" class="logged-in-display hiding">
         <fieldset>
           <legend>Add a New Hope or Dream</legend>
+            <div id="addEntryFailure"> </div>
           <input class="entry-title-input" type="text" name="entry[title]" value="" placeholder="new title-required">
           <input class="entry-backstory-input" type="text" name="entry[backstory]" value="" placeholder="entry backstory">
           <input class="entry-stopper-input" type="text" name="entry[stopper]" value="" placeholder="entry stopper">
@@ -86,6 +87,7 @@
       <form id="updateOneHnD" class="logged-in-display hiding">
         <fieldset>
           <legend>Update A Particular Hope or Dream</legend>
+            <div id="updateEntryFailure"> </div>
           <input class="entry-id-input" type="text" name="entry[id]" value="" placeholder="id no.-required">
           <input class="entry-title-input" type="text" name="entry[title]" value="" placeholder="update title">
           <input class="entry-backstory-input" type="text" name="entry[backstory]" value="" placeholder="entry backstory">
@@ -100,6 +102,7 @@
       <form id="deleteOneHnD" class="logged-in-display hiding">
         <fieldset>
           <legend>Delete A Particular Hope or Dream Forever</legend>
+            <div id="deleteEntryFailure"> </div>
           <input class="entry-id-input" type="text" name="entry[id]" value="" placeholder="id no.-required">
           <input class="entry-id-btn" type="submit" name="submit" value="Delete Entry Forever">
         </fieldset>
@@ -110,7 +113,7 @@
     <div id="content" class="content">
     </div>
   </div>
-  <!-- this is the facebook generated code, just for fun -->
+  <!-- this is the facebook generated code, just for fun no analytics connected at this time -->
   <div class="fb-like logged-in-display hiding"
     data-href="https://lisamsmith100.github.io/hnd-client/"
     data-layout="button_count"

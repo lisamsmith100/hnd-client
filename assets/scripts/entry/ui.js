@@ -34,12 +34,14 @@ const addEntrySuccess = (data) => {
   // console.log('addEntry is a success')
   api.showEntries(data)
     .then(showEntriesSuccess)
+    .then($('#addEntryFailure').html(' '))
     .catch(showEntriesFailure)
 }
 
 const addEntryFailure = (error) => {
   // console.log('addEntry failed')
   // console.error(error)
+  $('#addEntryFailure').html('We were unable to add your entry.  Did you add a title?  Please try again.')
 }
 
 const updateEntrySuccess = (data) => {
@@ -54,12 +56,14 @@ const updateEntrySuccess = (data) => {
   // console.log('updateEntry is a success')
   api.showEntries(data)
     .then(showEntriesSuccess)
+    .then($('#updateEntryFailure').html(' '))
     .catch(showEntriesFailure)
 }
 
 const updateEntryFailure = (error) => {
   // console.log('updateEntry failed')
   // console.error(error)
+  $('#updateEntryFailure').html('We were unable to update your entry.  Did you add an ID?  Please try again.')
 }
 
 const deleteEntrySuccess = (data) => {
@@ -69,12 +73,14 @@ const deleteEntrySuccess = (data) => {
   $('#delete').html(' ')
   api.showEntries(data)
     .then(showEntriesSuccess)
+    .then($('#deleteEntryFailure').html(' '))
     .catch(showEntriesFailure)
 }
 
 const deleteEntryFailure = (error) => {
   // console.log('deleteEntry failed')
   // console.error(error)
+  $('#deleteEntryFailure').html('We were unable to delete your entry.  Did you add an ID?  Please try again.')
 }
 
 module.exports = {
