@@ -52,6 +52,9 @@ const signOutSuccess = () => {
   $('.logged-in-display').addClass('hiding')
   $('.user-status').html('You are no longer signed in.')
   $('.content').html(' ')
+  $('#addNewHnD').trigger('reset')
+  $('#updateOneHnD').trigger('reset')
+  $('#deleteOneHnD').trigger('reset')
 }
 
 const signOutFailure = (error) => {
